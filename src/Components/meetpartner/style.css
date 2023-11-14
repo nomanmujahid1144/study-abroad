@@ -1,0 +1,13 @@
+.meetstart {
+  color: #222;
+  font-size: 3.125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+  margin-top: 2rem;
+}
+.rowapartn {
+    display: flex;
+    justify-content: space-evenly;
+}

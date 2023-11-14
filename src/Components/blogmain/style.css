@@ -1,0 +1,183 @@
+.firstp {
+  font-size: 1.5rem;
+  font-weight: 750;
+  color: #000000;
+}
+.secondpp {
+  color: #000000;
+  font-size: 1.05rem;
+}
+.twobtns {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 7rem;
+}
+.buttonone {
+  background-color: rgba(255, 178, 1, 0.1);
+  border-radius: 1.5rem;
+  border-color: transparent;
+  height: 2.5rem !important;
+  color: #ffb201;
+  font-size: medium;
+  font-weight: 700;
+  width: 12rem;
+}
+.buttonone:hover {
+  transform: translateY(
+    -3px
+  ); /* Adjust the value as needed for the desired amount of movement */
+  transition: transform 0.2s ease; /* Add a smooth transition for the effect */
+}
+
+.buttontwo {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 1.5rem;
+  border-color: transparent;
+  font-size: 0.9rem;
+  height: 2.5rem !important;
+  font-weight: 700;
+  color: #000000;
+  width: 10rem;
+}
+.buttontwo:hover {
+  transform: translateY(
+    -3px
+  ); /* Adjust the value as needed for the desired amount of movement */
+  transition: transform 0.2s ease; /* Add a smooth transition for the effect */
+}
+.featurep {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.textleft {
+  display: flex;
+  justify-content: flex-start;
+}
+.butncent {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  align-items: center;
+}
+.secondcolumn {
+  margin: 2rem;
+  margin-bottom: 2rem;
+}
+.cardss {
+  width: 100%;
+  margin-top: 1rem;
+  border: solid #eceff4 2px;
+}
+.cardsdata {
+  display: flex;
+  gap: 1rem;
+}
+.seconddata {
+  display: block;
+}
+.imag {
+  /* width: 6rem; */
+  height: 5rem;
+}
+.headi {
+  font-size: 1rem;
+  font-weight: 700;
+}
+.latestarticle {
+  font-size: 3rem;
+  font-weight: 600;
+}
+.size {
+  width: 2rem;
+  height: 2rem;
+}
+.btn-seealll {
+  background: linear-gradient(to right, #ffb201, #a27fff);
+  width: 14rem;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 2rem;
+  color: white;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+.btn-seealll:hover {
+  transform: translateY(
+    -3px
+  ); /* Adjust the value as needed for the desired amount of movement */
+  transition: transform 0.2s ease; /* Add a smooth transition for the effect */
+}
+.imagess {
+  height: 22rem;
+}
+@media screen and (max-width: 425px) {
+  .twobtns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  .firstp {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 750;
+    color: #000000;
+  }
+  .secondpp {
+    text-align: center;
+    color: #000000;
+    font-size: 1.05rem;
+  }
+  .imagess {
+    height: 10rem;
+  }
+  .divimg {
+    display: flex;
+    justify-content: center;
+  }
+  .cardss {
+    width: 100%;
+    margin-top: 1rem;
+    border: solid #eceff4 2px;
+    margin-bottom: 2rem;
+  }
+  .secondcolumn {
+    margin: 2rem;
+    margin-bottom: 2rem;
+  }
+  .buttonone {
+    background-color: rgba(255, 178, 1, 0.1);
+    border-radius: 1.5rem;
+    border-color: transparent;
+    height: 2.5rem !important;
+    color: #ffb201;
+    font-size: small;
+    font-weight: 700;
+    width: 10rem;
+  }
+  .buttontwo {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 1.5rem;
+    border-color: transparent;
+    font-size: 0.9rem;
+    height: 2.5rem !important;
+    font-weight: 700;
+    color: #000000;
+    width: 8rem;
+  }
+  .twobtns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 7rem;
+  }
+}

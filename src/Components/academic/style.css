@@ -1,0 +1,88 @@
+.imgesielts {
+  display: flex;
+  justify-content: center;
+}
+.img {
+  position: absolute;
+  margin-top: "3rem";
+}
+.cardwidths {
+  width: 21.375rem;
+  background: #fbf9fe;
+}
+.cardonetwo {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+.allps {
+  color: #a983eb;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.allps1 {
+  color: #f4ac1f;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.allps2 {
+  color: #20b486;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.yhsame {
+  color: #646464;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.cardacademics {
+  margin-top: 5rem;
+  display: flex;
+  gap: 15rem;
+  margin-left: 10rem;
+}
+.cardacademics1 {
+  margin-top: 5rem;
+  display: flex;
+  gap: 30rem;
+  margin-left: 5rem;
+  margin-bottom: 7rem;
+}
+
+@media (max-width: 1024px) {
+    .abcewqd{
+        display: flex;
+        justify-content: center;
+    }
+    .img {
+        display: none;
+      }
+    .cardwidths {
+        width: 21.375rem;
+        background: #fbf9fe;
+        margin-bottom: 2rem;
+      }
+  .cardacademics {
+    margin-top: 5rem;
+    display: block;
+    justify-content: center;
+    gap: 15rem;
+    margin-left: 0rem;
+  }
+  .cardacademics1 {
+    margin-top: 5rem;
+    display: block;
+    justify-content: center;
+    gap: 30rem;
+    margin-left: 0rem;
+  }
+}

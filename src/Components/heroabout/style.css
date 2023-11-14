@@ -1,0 +1,107 @@
+.perfecttxt {
+  color: #000;
+  font-family: Segoe UI;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.loretxt {
+  color: #646464;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.lorembutt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 2rem;
+  color: white;
+  width: 10rem;
+  background: linear-gradient(135deg, #ffb201 0%, #a27fff 100%);
+  border: none;
+}
+.lorembutt:hover {
+  transform: translateY(
+    -3px
+  ); /* Adjust the value as needed for the desired amount of movement */
+  transition: transform 0.2s ease; /* Add a smooth transition for the effect */
+}
+.imgyellow {
+  position: absolute;
+  margin-left: 8rem;
+  margin-top: 3.2rem;
+}
+.arrowimggg {
+  position: absolute;
+  margin-left: 38rem;
+  margin-top: -7rem;
+}
+.terhascndimggg {
+  position: absolute;
+  margin-top: 1rem;
+  margin-left: -5rem;
+}
+.airplaneimg {
+  position: absolute;
+  margin-top: -1.5rem;
+  margin-left: 8rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .perfecttxt {
+    text-align: center;
+    color: #000;
+    font-family: Segoe UI;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .loretxt {
+    text-align: center;
+    color: #646464;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .baadcen {
+    display: flex;
+    justify-content: center;
+  }
+  .lorembutt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-radius: 2rem;
+    color: white;
+    background: linear-gradient(135deg, #ffb201 0%, #a27fff 100%);
+  }
+  .imgyellow {
+    display: none;
+  }
+  .arrowimggg {
+    display: none;
+  }
+  .terhascndimggg {
+    display: none;
+  }
+  .airplaneimg {
+    display: none;
+  }
+}
+@media screen and (max-width: 425px) {
+  .chotimg {
+    width: 18rem;
+  }
+}

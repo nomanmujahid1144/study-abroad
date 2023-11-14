@@ -1,0 +1,22 @@
+.center-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.text-modal {
+  color: white;
+  margin-top: 6rem;
+}
+.stuyd-modal-btn {
+  background: white;
+  border-radius: 2rem;
+  border: white solid 1px;
+  padding: 0.5rem;
+  color: #a259ff;
+  font-weight: 500;
+  width: 12rem;
+  position: absolute;
+  margin-top: 17rem;
+  margin-left: -26rem;
+}

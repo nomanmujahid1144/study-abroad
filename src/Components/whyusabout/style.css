@@ -1,0 +1,46 @@
+.whmain {
+  margin-top: 4rem;
+}
+.rowwhyab {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.beapart {
+  color: #222;
+  font-size: 3.125rem;
+  font-style: normal;
+  font-weight: 400;
+}
+.alk {
+  color: #646464;
+  font-size: 0.9rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+@media (max-width: 425px) {
+  .alk {
+    color: #646464;
+    font-size: 0.9rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+  }
+  .beapart {
+    color: #222;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+  }
+  .imglastab {
+    width: 20rem;
+  }
+  .disimgert {
+    display: flex;
+    justify-content: center;
+  }
+}

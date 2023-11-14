@@ -1,0 +1,205 @@
+.card-center {
+  background: #777777;
+  width: 100%;
+  height: 10rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 6px 40px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+/* .card-center:hover {
+  transform: translateY(
+    -5px
+  );
+} */
+.card-center1 {
+  background: #ececec;
+  width: 12rem;
+  height: 10rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 6px 40px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+.card-center1:hover {
+  transform: translateY(
+    -5px
+  ); /* Adjust the value as needed for the desired amount of movement */
+  /* Add any additional styles for the div when it's being hovered */
+  /* ... */
+}
+.card-center2 {
+  background: #ffa9a9;
+  width: 12rem;
+  height: 10rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 6px 40px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+.card-center2:hover {
+  transform: translateY(
+    -5px
+  ); /* Adjust the value as needed for the desired amount of movement */
+  /* Add any additional styles for the div when it's being hovered */
+  /* ... */
+}
+.card-center3 {
+  background: #94b2ff;
+  width: 12rem;
+  height: 10rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 6px 40px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+.card-center3:hover {
+  transform: translateY(
+    -5px
+  ); /* Adjust the value as needed for the desired amount of movement */
+  /* Add any additional styles for the div when it's being hovered */
+  /* ... */
+}
+.card-center4 {
+  background: #ff6868;
+  width: 12rem;
+  height: 10rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 6px 40px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+.card-center4:hover {
+  transform: translateY(
+    -5px
+  ); /* Adjust the value as needed for the desired amount of movement */
+  /* Add any additional styles for the div when it's being hovered */
+  /* ... */
+}
+.card-center5 {
+  background: #d9d9d9;
+  width: 12rem;
+  height: 10rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 6px 40px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+.card-center5:hover {
+  transform: translateY(
+    -5px
+  ); /* Adjust the value as needed for the desired amount of movement */
+  /* Add any additional styles for the div when it's being hovered */
+  /* ... */
+}
+.card-center6 {
+  background: #ffe7e7;
+  width: 12rem;
+  height: 10rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 6px 40px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+.card-center6:hover {
+  transform: translateY(
+    -5px
+  ); /* Adjust the value as needed for the desired amount of movement */
+  /* Add any additional styles for the div when it's being hovered */
+  /* ... */
+}
+.card-center7 {
+  background: #ffe3bc;
+  width: 12rem;
+  height: 10rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 6px 40px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+.card-center7:hover {
+  transform: translateY(
+    -5px
+  ); /* Adjust the value as needed for the desired amount of movement */
+  /* Add any additional styles for the div when it's being hovered */
+  /* ... */
+}
+.card-center8 {
+  background: #fee4c9;
+  width: 12rem;
+  height: 10rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 6px 40px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+.card-center8:hover {
+  transform: translateY(
+    -5px
+  ); /* Adjust the value as needed for the desired amount of movement */
+  /* Add any additional styles for the div when it's being hovered */
+  /* ... */
+}
+.center-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.width-card {
+  margin-top: 5rem;
+  padding: 20px 0px;
+}
+@media (max-width: 1920px) {
+  .width-card {
+    width: 58rem;
+    margin-top: 5rem;
+  }
+}
+@media (max-width: 1440px) {
+  .width-card {
+    width: 65rem;
+    margin-top: 5rem;
+  }
+}
+@media (max-width: 1024px) {
+  .width-card {
+    width: 100% !important;
+    margin-top: 5rem;
+  }
+}
+@media (max-width: 768px) {
+  .width-card {
+    width: 100% !important;
+    margin-top: 5rem;
+  }
+}
+@media (max-width: 425px) {
+  .width-card {
+    width: 22rem;
+    margin-top: 5rem;
+  }
+}
+@media (max-width: 375px) {
+  .width-card {
+    width: 18rem;
+    margin-top: 5rem;
+  }
+}

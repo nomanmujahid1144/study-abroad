@@ -1,0 +1,50 @@
+.rows {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 3rem;
+  color: white;
+}
+.footermain {
+  background-color: #000000;
+  padding: 30px 0px;
+}
+.imgfo {
+  width: 7rem;
+  height: 5rem;
+}
+.scnddv {
+  font-size: 1rem;
+  color: white !important;
+  text-decoration: underline #000000;
+}
+.spacesless {
+  line-height: 1; /* Adjust the line-height value as needed */
+}
+.fourpicsdiv {
+  display: flex;
+  gap: 1rem;
+  margin-top: 5rem;
+}
+.imagesdiv {
+  height: 2rem;
+  width: 2rem;
+  background-color: white;
+  border-radius: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+.allrights {
+  text-align: center;
+  color: white;
+  font-size: small;
+  padding-bottom: 5rem;
+}
+@media screen and (max-width: 768px) {
+  .rows {
+    display: grid;
+    justify-content: center;
+    padding-top: 3rem;
+    color: white;
+  }
+}

@@ -1,0 +1,67 @@
+.firstthree {
+  background-color: #fbf9fe;
+  padding: 10px;
+  border-radius: 1rem;
+}
+.rowcntr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.frsttextu {
+  color: #a983eb;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.frsttextui {
+  color: #20b486;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.frsttextuii {
+  color: #f4ac1f;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.firscnd {
+  color: #646464;
+  font-size: 1.563rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+@media (max-width: 425px) {
+  .frsttextuii {
+    text-align: center;
+  }
+  .frsttextui {
+    text-align: center;
+  }
+  .frsttextu {
+    color: #a983eb;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
+  }
+  .firscnd {
+    color: #646464;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+  }
+
+  .imgsi {
+    width: 18rem;
+  }
+}

@@ -1,0 +1,128 @@
+.bg-whole {
+  background: linear-gradient(
+    to right,
+    rgba(219, 251, 234, 1),
+    rgba(233, 229, 255, 0)
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 45rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.back-img {
+  position: absolute;
+  right: 0;
+  width: 44rem;
+}
+.div-cour {
+  background: white;
+  box-shadow: rgba(162, 162, 162, 0.25);
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1;
+  width: 50rem;
+  height: 25rem;
+  border-radius: 0.5rem;
+}
+.btn-checking {
+  background: linear-gradient(to right, #ffb201, #a27fff) !important;
+  width: 15rem;
+  padding: 0.5rem;
+  color: white;
+  font-weight: 500;
+  border: none;
+  border-radius: 2rem;
+  font-size: 0.8rem;
+  margin-top: 1rem;
+}
+.btn-checking:hover {
+  transform: translateY(
+    -3px
+  ); /* Adjust the value as needed for the desired amount of movement */
+  transition: transform 0.2s ease; /* Add a smooth transition for the effect */
+}
+.text-cur {
+  color: #483286;
+  text-align: center;
+  font-weight: 500;
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+.text-lorum {
+  color: #4e566d;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+@media (max-width: 1440px) {
+  .back-img {
+    position: absolute;
+    right: 0;
+    width: 44.5rem;
+  }
+}
+@media (max-width: 1024px) {
+  .div-cour {
+    background: white;
+    box-shadow: rgba(162, 162, 162, 0.25);
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+    width: 40rem;
+    height: 20rem;
+    border-radius: 0.5rem;
+  }
+  .text-cur {
+    color: #483286;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+  }
+  .text-lorum {
+    color: #4e566d;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+}
+@media (max-width: 425px) {
+  .div-cour {
+    background: white;
+    box-shadow: rgba(162, 162, 162, 0.25);
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+    width: 100%;
+    height: 20rem;
+    border-radius: 0.5rem;
+  }
+  .text-cur {
+    color: #483286;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin-top: 2rem;
+  }
+  .text-lorum {
+    color: #4e566d;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    font-size: 0.7rem;
+  }
+}

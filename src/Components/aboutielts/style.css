@@ -1,0 +1,139 @@
+.abietxt {
+  margin-top: 4rem;
+  color: #f4ac1f;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-left: 10rem;
+}
+.divabo {
+  background-color: rgba(162, 127, 255, 0.06);
+  border-radius: 1rem;
+  padding: 5px;
+}
+.whtietext {
+  color: #646464;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.nice-lorem {
+  color: #646464;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.rowiel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.buseeall {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 1.5rem;
+  background: linear-gradient(135deg, #ffb201 0%, #a27fff 100%);
+  border-radius: 2rem;
+  border: none;
+  color: white;
+}
+.buseeall:hover {
+  transform: translateY(
+    -3px
+  ); /* Adjust the value as needed for the desired amount of movement */
+  transition: transform 0.2s ease; /* Add a smooth transition for the effect */
+}
+.setwxt {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 1rem;
+}
+.cardbcj {
+  background: linear-gradient(
+    135deg,
+    rgba(229, 164, 71, 0.06) 0%,
+    rgba(162, 127, 255, 0.06) 100%
+  );
+  width: 25rem;
+  padding: 10px;
+}
+.cardieltsss {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.scniet {
+  color: #646464;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.acdie {
+  color: #646464;
+  font-size: 1.3rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.ielimg {
+  width: 30rem;
+}
+@media (max-width: 1024px) {
+  .whtietext {
+    text-align: center;
+    color: #646464;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .nice-lorem {
+    text-align: center;
+
+    color: #646464;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .twrs {
+    display: flex;
+    justify-content: center;
+  }
+
+  .abietxt {
+    color: #f4ac1f;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-left: 0rem;
+    text-align: center;
+  }
+  .ielimg {
+    width: 20rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .cardbcj {
+    background: linear-gradient(
+      135deg,
+      rgba(229, 164, 71, 0.06) 0%,
+      rgba(162, 127, 255, 0.06) 100%
+    );
+    width: 20rem;
+    padding: 10px;
+  }
+  .ielimg {
+    width: 15rem;
+    margin-top: 2rem;
+  }
+}

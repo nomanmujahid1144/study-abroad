@@ -1,0 +1,206 @@
+.center-coll33 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.div-done-get {
+  padding: 70px 0px;
+}
+.big-img-mic {
+  width: 30rem;
+}
+.big-img-mic1 {
+  position: absolute;
+
+  height: 20rem !important;
+  margin-left: 28rem;
+  margin-top: -6rem;
+}
+.btn-take {
+  background: linear-gradient(to right, #ffb201, #a27fff) !important;
+  padding: 1rem;
+  width: 12rem;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none !important;
+  color: white;
+  font-size: 1rem;
+}
+.btn-take:hover {
+  transform: translateY(
+    -3px
+  ); /* Adjust the value as needed for the desired amount of movement */
+  transition: transform 0.2s ease; /* Add a smooth transition for the effect */
+}
+.text-sm {
+  color: #483286;
+  font-weight: 400;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+.text-big-get {
+  color: #483286;
+  font-weight: 400;
+  margin-top: 4.2rem;
+  margin-bottom: 2rem;
+}
+.text-big-get1 {
+  color: #a057ff !important;
+  text-decoration: none !important;
+}
+.style-modal {
+  width: 50rem !important;
+}
+.ant-modal-content {
+  background-color: transparent !important;
+}
+
+@media screen and (min-width: 1440px) and (max-width: 2560px) {
+  .btn-take {
+    background: linear-gradient(to right, #ffb201, #a27fff) !important;
+    padding: 1rem;
+    width: 12rem;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none !important;
+    color: white;
+    font-size: 1rem;
+  }
+  .btn-take:hover {
+    transform: translateY(
+      -3px
+    ); /* Adjust the value as needed for the desired amount of movement */
+    transition: transform 0.2s ease; /* Add a smooth transition for the effect */
+  }
+}
+
+@media (max-width: 1920px) {
+  .big-img-mic {
+    width: 30rem;
+  }
+  .big-img-mic1 {
+    position: absolute;
+    margin-left: 34rem;
+    margin-top: -6rem;
+    height: 20rem;
+  }
+  .text-big-get {
+    color: #483286;
+    font-weight: 400;
+    margin-top: 4.2rem;
+    margin-bottom: 2rem;
+    font-size: 3rem;
+  }
+  .text-big-get1 {
+    color: #a057ff !important;
+    text-decoration: none !important;
+  }
+  .text-sm {
+    color: #483286;
+    font-weight: 400;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 1440px) {
+  .big-img-mic {
+    width: 25rem;
+  }
+  .big-img-mic1 {
+    position: absolute;
+    margin-left: 26rem;
+    margin-top: -6rem;
+    height: 15rem;
+  }
+  .btn-take {
+    background: linear-gradient(to right, #ffb201, #a27fff) !important;
+    padding: 0.5rem;
+    width: 10rem;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: #483287 solid 1px;
+    color: white;
+    font-size: 1rem;
+  }
+  .text-sm {
+    color: #483286;
+    font-weight: 400;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+  }
+  .text-big-get {
+    color: #483286;
+    font-weight: 400;
+    margin-top: 4.2rem;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+  }
+  .text-big-get1 {
+    color: #a057ff !important;
+    text-decoration: none !important;
+  }
+}
+@media (max-width: 1024px) {
+  .big-img-mic1 {
+    position: absolute;
+    height: 15rem !important;
+    margin-left: 28rem;
+    margin-top: -6rem;
+  }
+  .text-big-get {
+    color: #483286;
+    font-weight: 400;
+    margin-top: 4.2rem;
+    margin-bottom: 2rem;
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 725px) {
+  .big-img-mic1 {
+    position: absolute;
+    margin-left: 0rem;
+    height: 12rem;
+    margin-top: 30rem;
+  }
+  .big-img-mic {
+    width: 20rem;
+  }
+}
+@media (max-width: 425px) {
+  .text-sm {
+    color: #483286;
+    font-weight: 400;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    text-align: center;
+  }
+  .text-big-get {
+    color: #483286;
+    font-weight: 400;
+    margin-top: 4.2rem;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  .text-big-get1 {
+    color: #a057ff !important;
+    text-decoration: none !important;
+  }
+  .mbl-view-center-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

@@ -1,0 +1,266 @@
+.bg-clr {
+    background: linear-gradient(
+      to right,
+      rgba(229, 164, 71, 0.06),
+      rgba(32, 180, 134, 0.06),
+      rgba(162, 127, 255, 0.06)
+    );
+  }
+  
+  .mainclass {
+    margin-top: 3rem;
+  }
+  .huu {
+    margin-left: 4rem;
+  }
+  .stick {
+    height: 90rem;
+    overflow-y: auto;
+  }
+  .text37 {
+    font-size: 22px;
+    font-weight: 700;
+  }
+  .buttuppub {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  .buttonpubli {
+    background-color: #ffb2011a;
+    color: #ffb201;
+    font-size: 12px;
+    font-weight: 600;
+    width: 12rem;
+    height: 2.5rem;
+    border: none;
+    border-radius: 2rem;
+  }
+  .buttonpubli:hover {
+    transform: translateY(
+      -3px
+    ); /* Adjust the value as needed for the desired amount of movement */
+    transition: transform 0.2s ease; /* Add a smooth transition for the effect */
+  }
+  .buttonupdated {
+    background-color: #20b4861a;
+    color: #20b486;
+    font-size: 12px;
+    font-weight: 600;
+    width: 12rem;
+    height: 2.5rem;
+    border: none;
+    border-radius: 2rem;
+  }
+  .buttonupdated:hover {
+    transform: translateY(
+      -3px
+    ); /* Adjust the value as needed for the desired amount of movement */
+    transition: transform 0.2s ease; /* Add a smooth transition for the effect */
+  }
+  .imagesize {
+    width: 511px;
+    height: 289px;
+    margin-bottom: 2rem;
+  }
+  .thereare {
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .therearee {
+    font-size: 16px;
+    font-weight: 700;
+  }
+  .personsimg {
+    width: 511px;
+  }
+  .abcimg {
+    position: absolute;
+    margin-left: -18rem;
+    margin-top: 2rem;
+  }
+  .thirdcolu {
+    border: 2px solid #eceff4;
+    padding: 10px;
+    width: 100%;
+    position: sticky;
+    top: 10%;
+  }
+  .centerthird {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+  }
+  .avatarcenter {
+    display: flex;
+    justify-content: center;
+  }
+  .textjamal {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .textlong {
+    font-size: 12px;
+    font-weight: 400;
+    color: #646464;
+  }
+  .imagee {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .threething {
+    display: flex;
+    justify-content: space-between;
+  }
+  .motylafz {
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .alltxts {
+    font-size: 12px;
+    font-weight: 400;
+    color: #646464;
+  }
+  .iniputsize {
+    width: 15rem;
+    height: 3rem;
+  }
+  .buttonn {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 1);
+    width: 15rem;
+    height: 3rem;
+    border: transparent;
+    border-radius: 0.5rem;
+  }
+  .alcont {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 5rem;
+  }
+  .btn-suvbsss {
+    background: linear-gradient(to right, #ffb201, #a27fff);
+    width: 14rem;
+    padding: 1rem;
+    border-radius: 0.3rem;
+    text-align: center;
+    color: white;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: none;
+  }
+  .btn-suvbsss:hover {
+    transform: translateY(
+      -3px
+    ); /* Adjust the value as needed for the desired amount of movement */
+    transition: transform 0.2s ease; /* Add a smooth transition for the effect */
+  }
+  @media (max-width: 1024px) {
+    .stick {
+      position: static;
+      top: 0; /* Adjust this value to control where the sticky element sticks */
+      height: auto; /* Set a fixed height for the scrollable area */
+      overflow-y: auto; /* Add vertical scroll if content exceeds the height */
+      display: flex;
+      justify-content: center;
+    }
+    .alcont {
+      display: flex;
+      justify-content: center;
+    }
+    .huu {
+      margin-left: 0rem;
+      text-align: center;
+    }
+  
+    .personsimg {
+      width: 450px;
+    }
+    .imagesize {
+      width: 450px;
+      height: 289px;
+      margin-bottom: 2rem;
+    }
+    .thereare {
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+  @media (max-width: 425px) {
+    .stick {
+      position: static;
+      top: 0; /* Adjust this value to control where the sticky element sticks */
+      height: auto; /* Set a fixed height for the scrollable area */
+      overflow-y: auto; /* Add vertical scroll if content exceeds the height */
+      display: flex;
+      justify-content: center;
+      text-align: center;
+    }
+    .allce {
+      display: flex;
+      justify-content: center;
+    }
+    .huu {
+      margin-left: 0rem;
+      text-align: center;
+    }
+    .text37 {
+      text-align: center;
+      font-size: 22px;
+      font-weight: 700;
+    }
+    .buttuppub {
+      display: grid;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    .alcont {
+      display: block;
+      justify-content: center;
+    }
+    .abcimg {
+      position: absolute;
+      margin-left: -12rem;
+      margin-top: 0.3rem;
+    }
+    .personsimg {
+      width: 20rem;
+    }
+    .imagesize {
+      width: 20rem;
+      margin-bottom: 2rem;
+    }
+    .thereare {
+      font-size: 12px;
+      font-weight: 400;
+    }
+  }
+  
+
+  .table-of-contents {
+    width: 100%;
+    border: 5px solid #eceff4;
+    padding: 20px;
+    position: sticky;
+    top: 10%;
+  }
+  
+  .toc-item {
+    cursor: pointer;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  
+  .toc-item:hover {
+    color: #20b486;
+  }
+  
+  .toc-item.active {
+    color: #20b486;
+  }
+  

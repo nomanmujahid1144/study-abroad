@@ -1,0 +1,22 @@
+.table-of-contents {
+  width: 100%;
+  border: 5px solid #eceff4;
+  padding: 20px;
+  position: sticky;
+  top: 10%;
+}
+
+.toc-item {
+  cursor: pointer;
+  padding: 5px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.toc-item:hover {
+  color: #20b486;
+}
+
+.toc-item.active {
+  color: #20b486;
+}

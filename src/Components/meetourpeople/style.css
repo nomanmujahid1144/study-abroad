@@ -1,0 +1,115 @@
+.test-text {
+    color: #f4ac1f;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+  .hear-text {
+    color: #222222;
+    font-weight: 500;
+    text-transform: capitalize;
+    font-size: 2rem;
+  }
+  .div-texted {
+    margin-left: 6rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .video-center {
+    position: relative;
+    width: 100%;
+    height: 25rem;
+    overflow: hidden;
+  }
+  .video-size {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+  }
+  
+  .div-bggg {
+    background: rgba(0, 0, 0, 0.42);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.7rem;
+    color: white;
+    margin-top: 16rem;
+    border-radius: 1rem;
+    width: 22rem;
+    margin-top: -6rem;
+    position: absolute;
+  }
+  .center-curr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .width-cur {
+    width: 70rem;
+  }
+  @media (max-width: 1440px) {
+    .div-texted {
+      margin-left: 9rem;
+    }
+  }
+  @media (max-width: 1406px) {
+    .div-texted {
+      margin-left: 6rem;
+    }
+  }
+  @media (max-width: 1024px) {
+    .width-cur {
+      width: 55rem;
+    }
+  }
+  @media (max-width: 768px) {
+    .width-cur {
+      width: 100%;
+    }
+  }
+  @media (max-width: 425px) {
+    .test-text {
+      color: #f4ac1f;
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-align: center;
+    }
+    .hear-text {
+      color: #222222;
+      font-weight: 500;
+      text-transform: capitalize;
+      font-size: 2rem;
+      text-align: center;
+    }
+    .div-texted {
+      margin-left: 0rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+    .video-size {
+      width: 18rem !important;
+      height: 18rem !important;
+      border-radius: 1rem;
+    }
+  
+    .div-bggg {
+      background: rgba(0, 0, 0, 0.42);
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      font-size: 0.7rem;
+      color: white;
+      margin-top: 16rem;
+      border-radius: 1rem;
+      width: 18rem;
+      margin-top: -12rem;
+      position: absolute;
+    }
+  }
+  

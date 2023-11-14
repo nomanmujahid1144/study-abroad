@@ -1,0 +1,63 @@
+.faq-content {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+.eachitem {
+  border-bottom: solid #ccd4d6 0.01rem;
+  width: 60rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+}
+@media screen and (max-width: 1024px) {
+  .eachitem {
+    border-bottom: solid #ccd4d6 0.01rem;
+    width: 100%;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .eachitem {
+    border-bottom: solid #ccd4d6 0.01rem;
+    width: 100%;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+  }
+}
+@media screen and (max-width: 425px) {
+  .eachitem {
+    border-bottom: solid #ccd4d6 0.01rem;
+    width: 100%;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+  }
+}
+
+/* Add animations for smooth toggle effect */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out; /* Adjust the duration as needed */
+}
+
+/* Apply styles when the FAQ item is active */
+.faq-item.active .faq-answer {
+  max-height: 1000px; /* Adjust this value based on your content's height */
+  animation: fadeIn 0.3s ease-in-out; /* Add a fadeIn animation */
+}
+
+/* Define the fadeIn animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

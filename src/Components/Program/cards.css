@@ -1,0 +1,150 @@
+.text-men {
+    color: #483286 !important;
+    font-weight: 500;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  .text-x {
+    color: #a057ff !important;
+    font-weight: 500;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  .div-whole-men {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px 0px;
+  }
+  .mentor-img {
+    width: 100%;
+  }
+  .mentorcard-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #94b2ff;
+    width: 11rem;
+    height: 10rem;
+    border-radius: 0.5rem;
+  }
+  .mentorcard-center1-about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #f7f0ff;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 0.5rem;
+  }
+  .widthimgabt {
+    width: 12rem;
+    height: 12rem;
+  }
+  .widthimgabtt {
+    width: 15rem;
+    height: 12rem;
+  }
+  .mentorcard-center2-about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #f3fbf9;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 0.5rem;
+  }
+  .recomtxt {
+    color: #20b486;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .searcour {
+    color: #f4ac1f;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .mentorcard-center3-about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #fffbf2;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 0.5rem;
+  }
+  .mentor-cors-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -8rem;
+  }
+  .text-center-mentor-about {
+    color: #a983eb;
+    font-size: 1.563rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+  .cardtxtabot {
+    color: #646464;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+  .mentor-width-card {
+    width: 65rem;
+  }
+  @media (max-width: 1024px) {
+    .mentor-width-card {
+      width: 55rem;
+    }
+  }
+  @media (max-width: 768px) {
+    .mentor-width-card {
+      width: 45rem;
+    }
+    .mentor-cors-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: -6rem;
+    }
+  }
+  @media (max-width: 425px) {
+    .mentor-width-card {
+      width: 24rem;
+    }
+    .mentor-cors-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: -6rem;
+    }
+  }
+  @media (max-width: 375px) {
+    .mentor-width-card {
+      width: 18rem;
+    }
+    .mentor-cors-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: -6rem;
+    }
+  }
+  

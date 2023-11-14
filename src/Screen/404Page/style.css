@@ -1,0 +1,164 @@
+.contct-logo-side-div {
+  position: absolute;
+  right: 0;
+}
+
+.padding-whole-div12 {
+  padding: 80px 0px;
+}
+.contact-col12 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 8rem;
+}
+
+.div-form-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-form1 {
+  width: 12rem;
+  padding: 0.5rem;
+  text-align: center;
+  color: white;
+  border: none;
+  border-radius: 0.3rem;
+  background: linear-gradient(to right, #ffb201, #a27fff);
+  margin-top: 2rem;
+}
+.btn-sign-up {
+  padding: 0.5rem;
+  text-align: center;
+  color: white;
+  border: none;
+  border-radius: 0.3rem;
+  background: linear-gradient(to right, #ffb201, #a27fff);
+  width: 6rem;
+  position: absolute;
+  right: 0;
+  margin-top: 1rem;
+  margin-right: 47rem;
+}
+.opp-text {
+  color: #fe5d5d;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.page-not {
+  font-weight: 500;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.exit-text {
+  color: #4b4b4b;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+@media (max-width: 1920px) {
+  .btn-sign-up {
+    padding: 0.5rem;
+    text-align: center;
+    color: white;
+    border: none;
+    border-radius: 0.3rem;
+    background: linear-gradient(to right, #ffb201, #a27fff);
+    width: 6rem;
+    position: absolute;
+    right: 0;
+    margin-top: 1rem;
+    margin-right: 27rem;
+  }
+}
+@media (max-width: 1440px) {
+  .btn-sign-up {
+    padding: 0.5rem;
+    text-align: center;
+    color: white;
+    border: none;
+    border-radius: 0.3rem;
+    background: linear-gradient(to right, #ffb201, #a27fff);
+    width: 6rem;
+    position: absolute;
+    right: 0;
+    margin-top: 1rem;
+    margin-right: 12.5rem;
+  }
+}
+@media (max-width: 1406px) {
+  .btn-sign-up {
+    padding: 0.5rem;
+    text-align: center;
+    color: white;
+    border: none;
+    border-radius: 0.3rem;
+    background: linear-gradient(to right, #ffb201, #a27fff);
+    width: 6rem;
+    position: absolute;
+    right: 0;
+    margin-top: 1rem;
+    margin-right: 9.5rem;
+  }
+}
+@media (max-width: 1024px) {
+  .btn-sign-up {
+    padding: 0.5rem;
+    text-align: center;
+    color: white;
+    border: none;
+    border-radius: 0.3rem;
+    background: linear-gradient(to right, #ffb201, #a27fff);
+    width: 6rem;
+    position: absolute;
+    right: 0;
+    margin-top: 1rem;
+    margin-right: 7rem;
+  }
+  .img-height {
+    height: 25rem;
+    margin-top: 2rem;
+  }
+}
+@media (max-width: 768px) {
+  .btn-sign-up {
+    padding: 0.5rem;
+    text-align: center;
+    color: white;
+    border: none;
+    border-radius: 0.3rem;
+    background: linear-gradient(to right, #ffb201, #a27fff);
+    width: 6rem;
+    position: absolute;
+    right: 0;
+    margin-top: 1rem;
+    margin-right: 1.5rem;
+  }
+  .img-height {
+    height: 22rem;
+    margin-top: 2rem;
+  }
+}
+@media (max-width: 425px) {
+  .btn-sign-up {
+    padding: 0.5rem;
+    text-align: center;
+    color: white;
+    border: none;
+    border-radius: 0.3rem;
+    background: linear-gradient(to right, #ffb201, #a27fff);
+    width: 6rem;
+    position: absolute;
+    right: 0;
+    margin-top: 1rem;
+    margin-right: 0rem;
+  }
+  .img-height {
+    height: 18rem;
+    margin-top: 2rem;
+  }
+}

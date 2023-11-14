@@ -1,0 +1,165 @@
+.text-clr {
+  background: linear-gradient(to right, #ffb201, #a27fff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 1.5rem;
+  margin-left: 4rem;
+}
+.centerdisp {
+  display: flex;
+  justify-content: center;
+}
+.centerdispp {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.centerdispi {
+  display: flex;
+  justify-content: center;
+  /* gap: 1rem; */
+}
+.plsht {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+.abinp {
+  width: 3.5rem !important;
+}
+
+.div-c {
+  display: flex;
+  justify-content: center;
+}
+.seconddivlog {
+  background-color: #ffffff;
+  width: 30rem;
+  height: 22rem;
+  padding: 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+}
+.abdr {
+  margin-top: 3rem;
+}
+.btnloglast {
+  background: linear-gradient(to right, #ffb201, #a27fff) !important;
+  color: white;
+  width: 15rem !important;
+  padding: 0.5rem;
+  display: flex !important;
+  justify-content: center !important;
+  border-radius: 0.5rem;
+  border: none !important;
+}
+.imglogings {
+  position: absolute;
+  width: 30rem;
+  margin-left: 35rem;
+  margin-top: -4rem;
+}
+.btnsign {
+  background-color: #563fd8 !important;
+  color: white;
+}
+.signup {
+  display: flex !important;
+  justify-content: right !important;
+  margin-top: 3rem;
+}
+.modalsi {
+  width: 70rem !important;
+  background-color: white !important;
+}
+.div-course {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 0.3rem;
+  border-radius: 2rem;
+  width: auto;
+  color: #444648 !important;
+  font-size: 1rem !important;
+  font-weight: 500;
+}
+.sign-btn {
+  background: linear-gradient(to right, #ffb201, #a27fff);
+  border-radius: 2rem;
+  padding: 0.5rem;
+  border: none;
+  width: 6rem;
+  font-size: 1rem !important;
+  font-weight: 500;
+  color: white !important;
+}
+.sign-btn:hover {
+  transform: translateY(
+    -3px
+  ); /* Adjust the value as needed for the desired amount of movement */
+  transition: transform 0.2s ease; /* Add a smooth transition for the effect */
+}
+
+.center-div-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* .img-logo-nav {
+  height: 8rem;
+  width: 8rem;
+  margin-top: 1rem;
+} */
+@media (max-width: 1406px) {
+  .text-clr {
+    background: linear-gradient(to right, #ffb201, #a27fff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 1.5rem;
+    margin-left: -1.7rem;
+  }
+}
+@media (max-width: 1024px) {
+  .text-clr {
+    background: linear-gradient(to right, #ffb201, #a27fff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 1.5rem;
+    margin-left: -1rem;
+  }
+}
+@media (max-width: 425px) {
+  .seconddivlog {
+    background-color: #ffffff;
+    width: 21rem;
+    height: 15rem;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+  }
+  .div-course {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 0.3rem;
+    border-radius: 2rem;
+    width: auto;
+    color: #444648 !important;
+    font-size: 1rem !important;
+    font-weight: 500;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  .text-clr {
+    background: linear-gradient(to right, #ffb201, #a27fff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 1.5rem;
+    margin-left: 0rem;
+  }
+}

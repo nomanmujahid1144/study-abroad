@@ -1,0 +1,193 @@
+.text-mentor {
+  color: #483286 !important;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  font-size: 2rem;
+}
+.text-x {
+  color: #a057ff !important;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  font-size: 2rem !important;
+}
+.div-whole-men {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 40px 0px;
+}
+.mentor-img {
+  width: 100%;
+}
+.mentorcard-center {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #94b2ff;
+  width: 100% !important;
+  height: 10rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 6px 40px rgba(0, 0, 0, 0.05);
+}
+/* .mentorcard-center:hover {
+  transform: translateY(
+    -4px
+  );
+  transition: transform 0.3s ease;
+} */
+
+.hover-up {
+  transition: transform 0.3s ease;
+}
+
+.hover-up:hover {
+  transform: translateY(-10px); /* Move the card upward on hover */
+}
+
+.mentorcard-center1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #f7f0ff;
+  width: 12rem;
+  height: 10rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 6px 40px rgba(0, 0, 0, 0.05);
+}
+.mentorcard-center1:hover {
+  transform: translateY(
+    -4px
+  ); /* Adjust the value as needed for the desired amount of movement */
+  transition: transform 0.3s ease; /* Add a smooth transition for the effect */
+}
+.mentorcard-center2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #d2f4ea;
+  width: 12rem;
+  height: 10rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 6px 40px rgba(0, 0, 0, 0.05);
+}
+.mentorcard-center2:hover {
+  transform: translateY(
+    -4px
+  ); /* Adjust the value as needed for the desired amount of movement */
+  transition: transform 0.3s ease; /* Add a smooth transition for the effect */
+}
+.mentorcard-center3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #ffefe0;
+  width: 12rem;
+  height: 10rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 6px 40px rgba(0, 0, 0, 0.05);
+}
+.mentorcard-center3:hover {
+  transform: translateY(
+    -4px
+  ); /* Adjust the value as needed for the desired amount of movement */
+  transition: transform 0.3s ease; /* Add a smooth transition for the effect */
+}
+.mentor-cors-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -7rem;
+}
+.text-center-mentor {
+  color: #483286;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  text-align: center;
+}
+.mentor-width-card {
+  width: 100%;
+  padding: 20px 0px;
+}
+@media (max-width: 1920px) {
+  .text-mentor {
+    color: #483286 !important;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    font-size: 2.5rem;
+  }
+  .text-x {
+    color: #a057ff !important;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    font-size: 2.5rem !important;
+  }
+  .mentor-width-card {
+    width: 100% !important;
+    padding: 20px 0px;
+  }
+}
+@media (max-width: 1024px) {
+  .mentor-width-card {
+    width: 100% !important;
+  }
+}
+@media (max-width: 768px) {
+  /* .mentor-img{
+    display: none;
+  } */
+  .mentor-width-card {
+    width: 100% !important;
+  }
+  .mentor-cors-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -6rem;
+  }
+  .text-mentor {
+    color: #483286 !important;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  .text-x {
+    color: #a057ff !important;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.5rem !important;
+  }
+}
+@media (max-width: 425px) {
+  .mentor-width-card {
+    width: 100% !important;
+  }
+  .mentor-cors-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -6rem;
+  }
+}
+@media (max-width: 375px) {
+  .mentor-width-card {
+    width: 100% !important;
+  }
+  .mentor-cors-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -6rem;
+  }
+}

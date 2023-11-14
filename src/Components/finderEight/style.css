@@ -1,0 +1,140 @@
+.center-global {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px 0px;
+}
+
+.where-text {
+  color: #483287;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+  margin-left: 1rem;
+}
+.bg-token-div {
+  background: linear-gradient(
+    to right,
+    rgba(255, 244, 237, 1),
+    rgba(241, 235, 255, 1)
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 65rem;
+  height: auto;
+  border: solid 1px rgba(237, 190, 86, 1);
+  border-radius: 0.5rem;
+  padding: 20px 0px;
+}
+.btn-next12 {
+  background: linear-gradient(to right, #ffb201, #a27fff) !important;
+
+  border: none;
+  width: 10rem;
+  border-radius: 2rem;
+  padding: 0.5rem;
+  color: white;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+.input-div {
+  width: 25rem !important;
+}
+@media (max-width: 1024px) {
+  .bg-token-div {
+    background: linear-gradient(
+      to right,
+      rgba(255, 244, 237, 1),
+      rgba(241, 235, 255, 1)
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 55rem;
+    height: auto;
+    border: solid 1px rgba(237, 190, 86, 1);
+    border-radius: 0.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .bg-token-div {
+    background: linear-gradient(
+      to right,
+      rgba(255, 244, 237, 1),
+      rgba(241, 235, 255, 1)
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 45rem;
+    height: auto;
+    border: solid 1px rgba(237, 190, 86, 1);
+    border-radius: 0.5rem;
+  }
+}
+@media (max-width: 425px) {
+  .bg-token-div {
+    background: linear-gradient(
+      to right,
+      rgba(255, 244, 237, 1),
+      rgba(241, 235, 255, 1)
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 25rem;
+    height: auto;
+    border: solid 1px rgba(237, 190, 86, 1);
+    border-radius: 0.5rem;
+    padding: 20px 0px;
+  }
+
+  .where-text {
+    color: #483287;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: center;
+    margin-left: 1rem;
+  }
+
+  .input-div {
+    width: 20rem !important;
+  }
+}
+@media (max-width: 375px) {
+  .bg-token-div {
+    background: linear-gradient(
+      to right,
+      rgba(255, 244, 237, 1),
+      rgba(241, 235, 255, 1)
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 20rem;
+    height: auto;
+    border: solid 1px rgba(237, 190, 86, 1);
+    border-radius: 0.5rem;
+    padding: 20px 0px;
+  }
+
+  .where-text {
+    color: #483287;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+    margin-left: 1rem;
+  }
+
+  .input-div {
+    width: 18rem !important;
+  }
+}

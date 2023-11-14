@@ -1,0 +1,165 @@
+.testfor {
+  fill: linear-gradient(
+    135deg,
+    rgba(229, 164, 71, 0.06) 0%,
+    rgba(162, 127, 255, 0.06) 100%
+  );
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+.testlo {
+  align-self: self-end;
+  color: #646464;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+}
+.cdfr {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.avatarsi {
+  width: 3rem;
+  height: 3rem;
+}
+.fullwi {
+  margin-bottom: 4rem;
+}
+.malor {
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+  margin-left: 10rem;
+  color: #222;
+  font-size: 3.125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.cardlorempkg {
+  background-color: #fff;
+  border-radius: 1rem;
+  width: 25rem;
+  height: auto;
+  text-align: center;
+}
+.ielpre {
+  color: #646464;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.rowlastcard {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+}
+.newlor {
+  margin-top: 5rem;
+  color: #646464;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.inbt {
+  margin-top: 3rem;
+  margin-left: 12rem;
+}
+.abs1 {
+  position: absolute;
+  float: right;
+  margin-left: 65rem;
+  margin-top: -3rem;
+}
+.abs {
+  position: absolute;
+  margin-left: -10rem;
+  margin-top: -12rem;
+}
+.lorembutt23 {
+  background: linear-gradient(to right, #ffb201, #a27fff);
+  width: 12rem;
+  padding: 0.5rem;
+  border-radius: 2rem;
+  text-align: center;
+  color: white;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: none;
+}
+.lorembutt23:hover {
+  transform: translateY(
+    -3px
+  ); /* Adjust the value as needed for the desired amount of movement */
+  transition: transform 0.2s ease; /* Add a smooth transition for the effect */
+}
+@media (max-width: 1024px) {
+  .abs {
+    display: none;
+  }
+  .abs1 {
+    display: none;
+  }
+  .inbt {
+    margin-top: 3rem;
+    margin-left: 0rem;
+  }
+  .malor {
+    margin-top: 4rem;
+    margin-left: 0rem;
+    color: #222;
+    font-size: 3.125rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+  }
+}
+
+@media (max-width: 425px) {
+  .cardlorempkg {
+    background-color: #fff;
+    border-radius: 1rem;
+    width: 20rem;
+    height: auto;
+    text-align: center;
+  }
+  .malor {
+    margin-top: 4rem;
+    margin-left: 0rem;
+    color: #222;
+    font-size: 2.125rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+  }
+  .avatarsi {
+    width: 2rem;
+    height: 2rem;
+  }
+  .testfor {
+    fill: linear-gradient(
+      135deg,
+      rgba(229, 164, 71, 0.06) 0%,
+      rgba(162, 127, 255, 0.06) 100%
+    );
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .testlo {
+    align-self: self-end;
+    color: #646464;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+  }
+}
