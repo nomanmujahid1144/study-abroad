@@ -6,6 +6,7 @@ import universityFinderReducer from "./UniversityfinderReducer";
 import scholarshipReducer from "./ScholarshipReducer";
 import accomodationReducer from "./AccomodationsReducer";
 import blogReducer from './BlogReducer';
+import formSubmissionReducer from "./FormSubmissionReducer";
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import ReduxThunk from "redux-thunk";
 
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
   scholarshipReducer,
   accomodationReducer,
   blogReducer,
+  formSubmissionReducer,
 });
 
 const store = createStore(rootReducer, applyMiddleware(ReduxThunk));

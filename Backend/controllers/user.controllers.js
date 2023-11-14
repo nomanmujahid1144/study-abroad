@@ -296,6 +296,26 @@ exports.userSocialSignup = async (req, res, next) => {
     return next(new ErrorResponse(err, 400));
   }
 };
+exports.userUpdateToContacted = async (req, res, next) => {
+  console.log(req.body, "signup social user request");
+  try {
+    const oldUser = await User.findByIdAndUpdate({ _id: mongoose.Types.ObjectId(req.body.id) },{contacted : true})
+    
+    if (!oldUser) {
+      // this means result is null
+      return next(new ErrorResponse("Status is not updated", 401));
+    } else { 
+      return res.status(200).json({
+        success: true,
+        message: "Status Updated Successfully",
+        data: oldUser,
+      });
+    }
+
+  } catch (err) {
+    return next(new ErrorResponse(err, 400));
+  }
+};
 
 exports.sendOTP = async (req, res, next) => {
 
@@ -454,7 +474,6 @@ exports.getAllUsers = async (req, res, next) => {
 };
 
 exports.getAdminCreatedUsers = async (req, res, next) => {
-  
   try {
     const allAdminUsers = await User.find({ 'roles.user': false }, {password: 0})
 
@@ -470,10 +489,10 @@ exports.getAdminCreatedUsers = async (req, res, next) => {
     return next(new ErrorResponse(err, 400));
   }
 }
-exports.getWebsiteUsers = async (req, res, next) => {
+exports.getWebsiteContactedUsers = async (req, res, next) => {
   
   try {
-    const allWebsiteUsers = await User.find({ 'roles.user': true }, {password: 0})
+    const allWebsiteUsers = await User.find({ 'roles.user': true, contacted : true }, {password: 0})
 
     if (!allWebsiteUsers) {
       return next(new ErrorResponse("Website Users Getting Failed", 400));
@@ -487,7 +506,23 @@ exports.getWebsiteUsers = async (req, res, next) => {
     return next(new ErrorResponse(err, 400));
   }
 };
+exports.getWebsiteUnContactedUsers = async (req, res, next) => {
+  
+  try {
+    const allWebsiteUsers = await User.find({ 'roles.user': true, contacted : false }, {password: 0})
 
+    if (!allWebsiteUsers) {
+      return next(new ErrorResponse("Website Users Getting Failed", 400));
+    }
+    return res.status(200).json({
+      success: true,
+      message: "All Website Users Get Successfully",
+      data: allWebsiteUsers,
+    });
+  } catch (err) {
+    return next(new ErrorResponse(err, 400));
+  }
+};
 exports.checkUserMail = async (req, res, next) => {
   try {
     let userEmail = await User.findOne({ email: req.query.email });
@@ -521,7 +556,6 @@ exports.checkUserMail = async (req, res, next) => {
     return next(new ErrorResponse(err, 400));
   }
 };
-
 exports.forgetPassword = async (req, res, next) => {
   console.log(req.body, 'req.body')
   try {

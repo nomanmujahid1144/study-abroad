@@ -62,6 +62,7 @@ import { getAllSingleUserScholarshipsById } from 'redux/Actions/SchlarshipAction
 import { getAllSingleUserAccomodationsById } from 'redux/Actions/AccomodationAction';
 import { updateUserToContacted } from 'redux/Actions/UserActions';
 import { useAlert } from 'react-alert';
+import { updateFormSubmissionToContacted } from 'redux/Actions/FormSubmissionAction';
 export default function SearchTableOrders(props) {
   const { tableData, isComanyUsers } = props;
   const navigate = useNavigate();
@@ -100,27 +101,10 @@ export default function SearchTableOrders(props) {
     }
   }, [userId]);
 
-  const viewUsersSubmittedForms = (id) => {
-    setUserId(id);
-    // navigate(`/admin/main/users/edit-user/${id}`);
-  };
-
-  const approveContected = (id) => {
-    dispatch(updateUserToContacted(id, alert));
-  };
-
   const columnHelper = createColumnHelper({
     fullName: '',
-    email: '',
     phoneNumber: '',
-    createdAt: '',
-    roles: {
-      user: Boolean,
-      admin: Boolean,
-      employee: Boolean,
-      content: Boolean,
-    },
-    _id: '',
+    formType: '',
   });
   const columns = [
     columnHelper.accessor('fullName', {
@@ -143,24 +127,6 @@ export default function SearchTableOrders(props) {
         </Flex>
       ),
     }),
-    columnHelper.accessor('email', {
-      id: 'email',
-      header: () => (
-        <Text
-          justifyContent="space-between"
-          align="center"
-          fontSize={{ sm: '10px', lg: '12px' }}
-          color="gray.400"
-        >
-          EMAIL
-        </Text>
-      ),
-      cell: (info) => (
-        <Text color={textColor} fontSize="md" fontWeight="500">
-          {info.getValue()}
-        </Text>
-      ),
-    }),
     // !isComanyUsers?
     columnHelper.accessor('phoneNumber', {
       id: 'phoneNumber',
@@ -180,9 +146,9 @@ export default function SearchTableOrders(props) {
         </Text>
       ),
     }),
-    // : null,
-    columnHelper.accessor('createdAt', {
-      id: 'createdAt',
+    // !isComanyUsers?
+    columnHelper.accessor('formType', {
+      id: 'formType',
       header: () => (
         <Text
           justifyContent="space-between"
@@ -190,42 +156,12 @@ export default function SearchTableOrders(props) {
           fontSize={{ sm: '10px', lg: '12px' }}
           color="gray.400"
         >
-          Created At
+          Form Type
         </Text>
       ),
       cell: (info) => (
         <Text color={textColor} fontSize="md" fontWeight="500">
-          {info.getValue()?.split('T')[0]}
-        </Text>
-      ),
-    }),
-    columnHelper.accessor('_id', {
-      id: '_id',
-      header: () => (
-        <Text
-          justifyContent="space-between"
-          align="center"
-          fontSize={{ sm: '10px', lg: '12px' }}
-          color="gray.400"
-        >
-          ACTIONS
-        </Text>
-      ),
-      cell: (info) => (
-        // <Menu
-        //   id={info.getValue()}
-        //   viewUsersSubmittedForms={viewUsersSubmittedForms}
-        // />
-        <Text
-          cursor="pointer"
-          color={brandColor}
-          textDecoration="underline"
-          fontSize="md"
-          fontWeight="500"
-          onClick={() => viewUsersSubmittedForms(info.getValue())}
-          id={info.getValue()}
-        >
-          View Details
+          {info.getValue()}
         </Text>
       ),
     }),

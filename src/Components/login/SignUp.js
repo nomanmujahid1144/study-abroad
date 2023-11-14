@@ -25,7 +25,6 @@ function Signup() {
     });
     
     const targetUrl = location.state && location.state.targetUrl;
-    console.log(location.state, 'location.state')
     const data = location.state && location.state.data;
 
     const handleSubmit = async (e) => {

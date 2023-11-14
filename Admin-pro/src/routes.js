@@ -29,7 +29,10 @@ import AccountCoursePage from 'views/admin/main/account/coursePage';
 
 import UserNew from 'views/admin/main/users/newUser';
 import UsersOverview from 'views/admin/main/users/overview/index';
-import UsersFormSubmitted from 'views/admin/main/users/overview/usersFormSubmitted';
+import UsersContactedFormSubmitted from 'views/admin/main/users/overview/usersFormSubmitted';
+import UsersUnContactedFormSubmitted from 'views/admin/main/users/overview/usersUnContactedFormSubmitted';
+import UsersContactedConsultationFormSubmitted from 'views/admin/main/users/overview/usersContactedConsultationFormSubmitted';
+import UsersUnContactedConsultationFormSubmitted from 'views/admin/main/users/overview/usersUnContactedConsultationFormSubmitted';
 import UsersReports from 'views/admin/main/users/reports';
 
 import BlogNew from 'views/admin/main/blogs/newBlog';
@@ -110,11 +113,41 @@ const routes = [
     collapse: true,
     items: [
       {
-        name: 'Users Data',
+        name: 'Contacted Users',
         layout: '/admin',
-        path: '/main/users/users-data',
+        path: '/main/users/contacted-users-data',
         exact: false,
-        component: <UsersFormSubmitted />,
+        component: <UsersContactedFormSubmitted />,
+      },
+      {
+        name: 'Un Contacted Users',
+        layout: '/admin',
+        path: '/main/users/un-contacted-data',
+        exact: false,
+        component: <UsersUnContactedFormSubmitted />,
+      },
+    ],
+  },
+  // // --- Form Submitted By the Users ---
+  {
+    name: 'Users Consultations',
+    path: '/main/consultation',
+    icon: <Icon as={FaWpforms} width="20px" height="20px" color="inherit" />,
+    collapse: true,
+    items: [
+      {
+        name: 'Contacted Users',
+        layout: '/admin',
+        path: '/main/consultation/contacted-users-data',
+        exact: false,
+        component: <UsersContactedConsultationFormSubmitted />,
+      },
+      {
+        name: 'Un Contacted Users',
+        layout: '/admin',
+        path: '/main/consultation/uncontacted-users-data',
+        exact: false,
+        component: <UsersUnContactedConsultationFormSubmitted />,
       },
     ],
   },

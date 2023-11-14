@@ -187,21 +187,45 @@ export const getAdminCreatedUsers = (alert) => {
   };
 };
 
-export const getWebsitessUsers = (alert) => {
+export const getWebsitessContactedUsers = (alert) => {
   return async (dispatch) => {
     dispatch(selectProgressBarState(true));
-    const res = await axiosInstance.get('/api/v1/user/get-websites-users');
+    const res = await axiosInstance.get(
+      '/api/v1/user/get-websites-contacted-users',
+    );
     if (res.data.success === true) {
       dispatch(selectProgressBarState(false));
       dispatch({
-        type: ACTION_TYPES.GET_WEBSITE_USERS,
+        type: ACTION_TYPES.GET_WEBSITE_CONTACTED_USERS,
+        payload: res.data.data,
+      });
+    } else {
+      dispatch(selectProgressBarState(false));
+      alert.show('Contacted Users Not Found');
+      dispatch({
+        type: ACTION_TYPES.GET_WEBSITE_CONTACTED_USERS,
+        payload: [],
+      });
+    }
+  };
+};
+export const getWebsitessUnContactedUsers = (alert) => {
+  return async (dispatch) => {
+    dispatch(selectProgressBarState(true));
+    const res = await axiosInstance.get(
+      '/api/v1/user/get-websites-uncontacted-users',
+    );
+    if (res.data.success === true) {
+      dispatch(selectProgressBarState(false));
+      dispatch({
+        type: ACTION_TYPES.GET_WEBSITE_UNCONTACTED_USERS,
         payload: res.data.data,
       });
     } else {
       dispatch(selectProgressBarState(false));
       alert.show('No Message Found');
       dispatch({
-        type: ACTION_TYPES.GET_WEBSITE_USERS,
+        type: ACTION_TYPES.GET_WEBSITE_UNCONTACTED_USERS,
         payload: [],
       });
     }
@@ -339,6 +363,30 @@ export const updateSocial = (social, alert) => {
     try {
       dispatch(selectProgressBarState(true));
       const res = await axiosInstance.patch('/api/v1/user/updateuser', social);
+      if (res.data.success) {
+        dispatch(selectProgressBarState(false));
+        alert.show(res.data.message);
+      } else {
+        dispatch(selectProgressBarState(false));
+        alert.show('Something Went Wrong');
+      }
+    } catch (err) {
+      const error = handleApiError(err);
+      alert.show(error.length > 0 ? error[0].message : 'Something went wrong');
+    }
+  };
+};
+
+export const updateUserToContacted = (id, alert) => {
+  return async (dispatch) => {
+    try {
+      console.log(id);
+      dispatch(selectProgressBarState(true));
+      const res = await axiosInstance.patch(
+        '/api/v1/user/update-to-contacted',
+        { id },
+      );
+      console.log(res, 'RESPONSE');
       if (res.data.success) {
         dispatch(selectProgressBarState(false));
         alert.show(res.data.message);

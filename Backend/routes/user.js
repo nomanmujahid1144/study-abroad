@@ -24,7 +24,9 @@ const {
   getDeactivateAccount,
   deactivateaccount,
   getAdminCreatedUsers,
-  getWebsiteUsers,
+  userUpdateToContacted,
+  getWebsiteUnContactedUsers,
+  getWebsiteContactedUsers,
 } = require("../controllers/user.controllers");
 
 const checkAuth = require("../middleware/check-auth");
@@ -38,11 +40,13 @@ router.patch("/updatepassword", updateUserPassword);
 router.patch("/changeUserPassword", checkAuth, changeUserPassword);
 
 router.get("/getadmincreatedusers", getAdminCreatedUsers);
-router.get("/get-websites-users", getWebsiteUsers);
+router.get("/get-websites-contacted-users", getWebsiteContactedUsers);
+router.get("/get-websites-uncontacted-users", getWebsiteUnContactedUsers);
 
 router.post('/sendotp',checkAuth , sendOTP);
 router.post('/verify-otp', checkAuth ,verifyOTP);
 
+router.patch("/update-to-contacted", userUpdateToContacted);
 router.post("/usersocialsignup", userSocialSignup);
 router.patch("/updateuser", checkAuth, updateUser);
 router.patch("/updateuserbyid", updateUserById);

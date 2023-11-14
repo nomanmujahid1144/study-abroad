@@ -4,7 +4,8 @@ const initialState = {
   userbyid: {},
   user: {},
   adminUsers: [],
-  websiteUsers: [],
+  websiteContactedUsers: [],
+  websiteUnContactedUsers: [],
   unapprovedUser: [],
   deactivateUser: [],
 };
@@ -17,10 +18,16 @@ const UsersReducer = (state = initialState, action) => {
         adminUsers: action.payload,
       };
     }
-    case ACTION_TYPES.GET_WEBSITE_USERS: {
+    case ACTION_TYPES.GET_WEBSITE_CONTACTED_USERS: {
       return {
         ...state,
-        websiteUsers: action.payload,
+        websiteContactedUsers: action.payload,
+      };
+    }
+    case ACTION_TYPES.GET_WEBSITE_UNCONTACTED_USERS: {
+      return {
+        ...state,
+        websiteUnContactedUsers: action.payload,
       };
     }
     case ACTION_TYPES.GET_UNAPPROVED_USERS: {

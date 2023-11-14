@@ -1,21 +1,41 @@
 import React from "react";
 import "./style.css";
-import { Col, Row} from "antd";
+import { Col, Row, message} from "antd";
 import Idea from "../../images/image 22 (1).png";
 import Arrow from "../../images/span.jss107.png";
 import PhoneInput from "react-phone-number-input";
 import { useState } from "react";
 import { FinderCard } from "../finderCard/finderCardBG";
 import { PreviousFinder } from "../finderCard/FinderPrevious";
+import InputField from "../fields/InputField";
+import { newFormSubmission } from "../../redux/Actions/FormSubmissionAction";
+import { useDispatch } from "react-redux";
 
-function VisaExpertModal() {
+function VisaExpertModal({handleCloseModal}) {
 
+  const dispatch = useDispatch();
   const [value, setValue] = useState();
+  const [credentials, setcredentials] = useState({
+    fullName: "",
+  });
 
-  const onSubmit = (e) => {
-    e.preventDefault();
-    console.log("Received values of form: ", value);
+  const handleSubmit = async (e) => {
+      e.preventDefault();
+      const { fullName} = credentials;
+    dispatch(newFormSubmission(fullName, value, "For Visa Information", message, 'Visa Form Submitted Successfully')).then(() => {
+      handleCloseModal();
+      setcredentials({
+        fullName: "",
+      })
+      setValue()
+    });
   };
+
+  const onChange = (e) => {
+      setcredentials({ ...credentials, [e.target.name]: e.target.value });
+  };
+
+
 
 
   return (
@@ -51,12 +71,22 @@ function VisaExpertModal() {
               isHeading={false}
               heading={`Talk to Visa Expert`}
             />
-            <form onSubmit={onSubmit} className="text-center">
-              <div>
+            <form onSubmit={handleSubmit} className="text-center">
+                <InputField
+                    variant="auth"
+                    extra="mb-3"
+                    // label="Your Name*"
+                    placeholder="Enter Your Name"
+                    required={true}
+                    id="fullName"
+                    type="text"
+                    value={credentials.fullName}
+                    onChange={onChange}
+                />
                 <PhoneInput
                   isValidPhoneNumber={true}
                   limitMaxLength={true}
-                  className="form-control d-flex border border-gray-300"
+                  className="form-control d-flex border-0 border-gray-300"
                   international
                   initialValueFormat="international"
                   countryCallingCodeEditable={false} 
@@ -67,9 +97,8 @@ function VisaExpertModal() {
                   onChange={setValue}
                   displayInitialValueAsLocalNumber
                 />
-              </div>
               <button className="btn-next " type="submit">
-                Continue <img src={Arrow} alt="" className="im-size" />
+                Submit <img src={Arrow} alt="" className="im-size" />
               </button>
             </form>
             <p className="text-by-term">

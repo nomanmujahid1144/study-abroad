@@ -1,7 +1,7 @@
 import axios from 'axios';
 export const axiosInstance = axios.create({
-  baseURL: 'http://localhost:1212',
-  // baseURL: 'https://server.overseasstudypros.com',
+  // baseURL: 'http://localhost:1212',
+  baseURL: 'https://server.overseasstudypros.com',
 });
 
 const addTokenToRequest = (config) => {

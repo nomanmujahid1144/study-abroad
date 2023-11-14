@@ -79,8 +79,11 @@ const User = new mongoose.Schema({
             type: String,
             default: ''
         },
+    },
+    contacted: {
+        type: Boolean,
+        defalut: false
     }
-},
-    { timestamps: true })
+},{ timestamps: true })
 
 module.exports = mongoose.model('User', User);

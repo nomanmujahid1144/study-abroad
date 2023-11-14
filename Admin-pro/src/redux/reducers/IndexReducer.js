@@ -7,6 +7,7 @@ import scholarshipReducer from './ScholarshipReducer';
 import accomodationReducer from './AccomodationsReducer';
 import blogReducer from './BlogReducer';
 import DashboardReducer from './DashboardReducers';
+import formSubmissionReducer from './FormSubmissionReducer';
 
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import ReduxThunk from 'redux-thunk';
@@ -19,6 +20,7 @@ const rootReducer = combineReducers({
   scholarshipReducer,
   accomodationReducer,
   blogReducer,
+  formSubmissionReducer,
   DashboardReducer,
 });
 

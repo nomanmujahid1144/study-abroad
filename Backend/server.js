@@ -58,6 +58,7 @@ const contactmails = require("./routes/contactmails");
 const universityFinder = require("./routes/universityfinder");
 const schoarships = require("./routes/schoarships");
 const accomodation = require("./routes/accomodation");
+const formSubmission = require("./routes/formSubmission");
 
 //Body Parser
 app.use(express.json({ limit: "50mb" }));
@@ -79,6 +80,7 @@ app.use("/api/v1/contacts", contactmails);
 app.use("/api/v1/universityFinder", universityFinder);
 app.use("/api/v1/scholarship", schoarships);
 app.use("/api/v1/accomodation", accomodation);
+app.use("/api/v1/formsubmission", formSubmission);
 
 // set static folder
 app.use(express.static(path.join(__dirname, "public")));

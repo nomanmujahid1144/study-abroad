@@ -106,7 +106,9 @@ export default function SearchTableOrders(props) {
   };
 
   const approveContected = (id) => {
-    dispatch(updateUserToContacted(id, alert));
+    dispatch(updateUserToContacted(id, alert)).then(() => {
+      navigate('/admin/main/users/contacted-users-data');
+    });
   };
 
   const columnHelper = createColumnHelper({
@@ -211,25 +213,50 @@ export default function SearchTableOrders(props) {
           ACTIONS
         </Text>
       ),
+      // cell: (info) => (
+      //   // <Menu
+      //   //   id={info.getValue()}
+      //   //   viewUsersSubmittedForms={viewUsersSubmittedForms}
+      //   // />
+      //   <Text
+      //     cursor="pointer"
+      //     color={brandColor}
+      //     textDecoration="underline"
+      //     fontSize="md"
+      //     fontWeight="500"
+      //     onClick={() => viewUsersSubmittedForms(info.getValue())}
+      //     id={info.getValue()}
+      //   >
+      //     View Details
+      //   </Text>
+      // ),
       cell: (info) => (
-        // <Menu
-        //   id={info.getValue()}
-        //   viewUsersSubmittedForms={viewUsersSubmittedForms}
-        // />
-        <Text
-          cursor="pointer"
-          color={brandColor}
-          textDecoration="underline"
-          fontSize="md"
-          fontWeight="500"
-          onClick={() => viewUsersSubmittedForms(info.getValue())}
-          id={info.getValue()}
+        <Select
+          onChange={(selectedOption) =>
+            handleMenuSelection(selectedOption, info.getValue())
+          }
+          placeholder="Select option"
         >
-          View Details
-        </Text>
+          <option value="viewDetails">View Details</option>
+          <option value="contected">Approve Contected</option>
+        </Select>
       ),
     }),
   ];
+
+  const handleMenuSelection = (selectedOption, info) => {
+    // Implement the logic based on the selected option
+    switch (selectedOption.target.value) {
+      case 'viewDetails':
+        viewUsersSubmittedForms(info);
+        break;
+      case 'contected':
+        approveContected(info);
+        break;
+      default:
+        break;
+    }
+  };
 
   const [data, setData] = React.useState(() => [...defaultData]);
   const [{ pageIndex, pageSize }, setPagination] = React.useState({

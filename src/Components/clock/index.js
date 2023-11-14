@@ -98,7 +98,9 @@ function Clock() {
               footer={null}
               centered
             >
-              <VisaExpertModal />
+              <VisaExpertModal
+                handleCloseModal={closeVisaModal}
+              />
             </Modal>
             <div>
               <div className="blue-box1">
@@ -156,7 +158,7 @@ function Clock() {
                   footer={null}
                   centered
                 >
-                  <LoanModal />
+                  <LoanModal handleCloseModal={closeLoanModal} />
                 </Modal>
               </div>
               <div className="blue-box4">
