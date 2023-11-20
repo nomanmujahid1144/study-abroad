@@ -47,7 +47,7 @@ import InputField from 'components/fields/InputField';
 import TextField from 'components/fields/TextField';
 import TagsField from 'components/fields/TagsField';
 import Dropzone from './component/Dropzone';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
@@ -55,11 +55,13 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { MdOutlineCloudUpload } from 'react-icons/md';
 import axiosInstance from 'constants/axiosInstance';
 import { baseURL } from 'constants/baseURL';
-import { addBlog } from 'redux/Actions/BlogsActions';
+import { addBlog, getBlogById, updateBlog } from 'redux/Actions/BlogsActions';
 import { useNavigate } from 'react-router-dom';
 import { useAlert } from 'react-alert';
 import { useDispatch } from 'react-redux';
 import { transformString } from 'constants/helperFunction';
+import { useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 export default function NewProduct() {
   const textColor = useColorModeValue('secondaryGray.900', 'white');
@@ -72,6 +74,7 @@ export default function NewProduct() {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const params = useParams();
   const alert = useAlert();
 
   const productTab = React.useRef();
@@ -136,31 +139,125 @@ export default function NewProduct() {
     setSelectedImage(image);
   };
 
+  // Function to Validate Array if it is array of string or array of objs
+  function isArrayofStrings(arr) {
+    return Array.isArray(arr) && arr.every((item) => typeof item === 'string');
+  }
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     const siteURl = transformString(formDatas.url);
     const formData = new FormData();
+    // Check if the user edit Tags list or not
+    const isNamesArrayValid = isArrayofStrings(tags);
+
     formData.append('blogHeading', formDatas.blogHeading);
     formData.append('data', formDatas.data);
     formData.append('metaTitle', formDatas.metaTitle);
     formData.append('metaDescription', formDatas.metaDescription);
     formData.append('url', siteURl);
-    formData.append('metaTags', JSON.stringify(tags));
+    if (isNamesArrayValid) {
+      formData.append('metaTags', JSON.stringify(tags));
+    } else {
+      formData.append('metaTags', JSON.stringify(blog.metaTags));
+    }
+    console.log(selectedImage, 'selectedImage');
     if (selectedImage) {
       formData.append('blogImage', selectedImage);
     }
-
-    dispatch(addBlog(formData, navigate, alert));
+    console.log(tags, 'tags');
+    console.log(formDatas, 'formDatas');
+    if (params.id) {
+      dispatch(updateBlog(params.id, formData, navigate, alert)).then(() => {
+        navigate('/admin/main/blog/all-blogs');
+      });
+    } else {
+      dispatch(addBlog(formData, navigate, alert));
+      // console.log('New');
+    }
   };
 
   const handleGetTags = (allTags) => {
     let arr = [];
     if (allTags.length > 0) {
       allTags.map((tag) => arr.push(tag.name));
-      console.log(arr);
     }
     setTags(allTags.length > 0 ? arr : []);
   };
+
+  // EDIT BLOG CODING
+
+  const { blog } = useSelector((state) => state.blogReducer);
+
+  useEffect(() => {
+    if (params.id) {
+      dispatch(getBlogById(params.id));
+    } else {
+      setSelectedImage(null);
+      setFormData({
+        blogHeading: '',
+        blogImage: null,
+        data: '',
+        metaTitle: '',
+        metaDescription: '',
+        url: '',
+        metaTags: [],
+      });
+      setTags([]);
+    }
+  }, [params]);
+
+  useEffect(() => {
+    if (blog) {
+      if (Object.keys(blog).length > 0) {
+        setFormData({
+          blogHeading: blog.blogHeading,
+          blogImage: blog.blogImage,
+          data: blog.data,
+          metaTitle: blog.metaTitle,
+          metaDescription: blog.metaDescription,
+          url: blog.url,
+          metaTags: blog.metaTags,
+        });
+        if (blog.metaTags.length > 0) {
+          let obj;
+          let arr = [];
+          blog.metaTags.forEach((element, index) => {
+            obj = {
+              name: element,
+              id: index + 1,
+            };
+            arr.push(obj);
+          });
+          setTags(arr);
+        }
+      } else {
+        setSelectedImage(null);
+        setFormData({
+          blogHeading: '',
+          blogImage: null,
+          data: '',
+          metaTitle: '',
+          metaDescription: '',
+          url: '',
+          metaTags: [],
+        });
+        setTags([]);
+      }
+    } else {
+      setSelectedImage(null);
+      setFormData({
+        blogHeading: '',
+        blogImage: null,
+        data: '',
+        metaTitle: '',
+        metaDescription: '',
+        url: '',
+        metaTags: [],
+      });
+      setTags([]);
+    }
+  }, [blog]);
 
   return (
     <Flex
@@ -453,8 +550,10 @@ export default function NewProduct() {
                 >
                   Media
                 </Text>
+                {console.log(blog)}
                 <Dropzone
                   handleImage={handleImage}
+                  editImage={params.id ? blog?.blogImage : ''}
                   content={
                     <Box>
                       <Icon
@@ -516,7 +615,9 @@ export default function NewProduct() {
                     w={{ base: '128px', md: '148px' }}
                     h="46px"
                     onClick={() =>
-                      selectedImage ? pricingTab.current.click() : null
+                      selectedImage || blog.blogImage !== ''
+                        ? pricingTab.current.click()
+                        : null
                     }
                     disabled={selectedImage ? false : true}
                     cursor={selectedImage ? 'pointer' : 'not-allowed'}
@@ -762,6 +863,7 @@ export default function NewProduct() {
                       value={formDatas.metaDescription}
                       onChange={onChange}
                     />
+                    {console.log(tags, 'FISR TSGS')}
                     <TagsField
                       label="Meta Tags"
                       isRequired={true}
@@ -773,6 +875,7 @@ export default function NewProduct() {
                       fontWeight="500"
                       size="lg"
                       name="metaTags"
+                      value={tags.length > 0 ? tags : []}
                       getTags={handleGetTags}
                     />
                   </Stack>

@@ -16,6 +16,7 @@ import { useState } from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
 import routes from 'routes';
 import SingleBlog from 'views/admin/main/blogs/singleBlog';
+import NewBlog from 'views/admin/main/blogs/newBlog';
 
 // Custom Chakra theme
 export default function Dashboard(props: { [x: string]: any }) {
@@ -162,6 +163,7 @@ export default function Dashboard(props: { [x: string]: any }) {
                   element={<ProfileSettings />}
                 />
                 <Route path="/main/blog/:id" element={<SingleBlog />} />
+                <Route path="/main/updateblog/:id" element={<NewBlog />} />
                 <Route path="/main/users/edit-user/:id" element={<UserNew />} />
               </Routes>
             </Box>

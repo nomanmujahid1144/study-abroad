@@ -82,7 +82,7 @@ const User = new mongoose.Schema({
     },
     contacted: {
         type: Boolean,
-        defalut: false
+        default: false
     }
 },{ timestamps: true })
 

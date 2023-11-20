@@ -1,9 +1,10 @@
 import React, { useState } from 'react'; // Step 1
 import { Button, Flex, useColorModeValue, Text } from '@chakra-ui/react';
 import { useDropzone } from 'react-dropzone';
+import { baseURL } from 'constants/baseURL';
 
 function Dropzone(props) {
-  const { handleImage, content, ...rest } = props;
+  const { handleImage, editImage, content, ...rest } = props;
   const [selectedImage, setSelectedImage] = useState(null); // Step 2
   const bg = useColorModeValue('gray.100', 'navy.700');
   const borderColor = useColorModeValue('gray.300', 'whiteAlpha.100');
@@ -40,9 +41,15 @@ function Dropzone(props) {
         {...rest}
       >
         <input {...getInputProps()} />
-        {selectedImage ? ( // Step 5
+        {console.log(selectedImage)}
+        {console.log(editImage)}
+        {selectedImage || editImage ? ( // Step 5
           <img
-            src={URL.createObjectURL(selectedImage)}
+            src={
+              editImage !== '' && !selectedImage
+                ? baseURL + editImage
+                : URL.createObjectURL(selectedImage)
+            }
             style={{ maxHeight: '20rem', width: '-webkit-fill-available' }}
             alt="Selected"
           />

@@ -37,9 +37,7 @@ export const addBlog = (updatedFormData, navigate, alert) => {
 
 export const updateBlog = (
   id,
-  aboutData,
-  blogHeading,
-  headerImage,
+  formData,
   navigate,
   alert,
   isOpen,
@@ -47,21 +45,7 @@ export const updateBlog = (
 ) => {
   return async (dispatch) => {
     dispatch(selectProgressBarState(true));
-    console.log(headerImage);
-    let obj = {};
-    if (headerImage) {
-      obj = {
-        data: aboutData,
-        blogHeading: blogHeading,
-        blogImage: headerImage,
-      };
-    } else {
-      obj = {
-        data: aboutData,
-        blogHeading: blogHeading,
-      };
-    }
-    const res = await axiosInstance.post('/api/v1/blog/updateblog', obj, {
+    const res = await axiosInstance.post('/api/v1/blog/updateblog', formData, {
       params: {
         id: id,
       },
@@ -71,16 +55,7 @@ export const updateBlog = (
     });
     if (res.data.success === true) {
       dispatch(selectProgressBarState(false));
-      alert.show('Blog updated successfully', {
-        onClose: () => {
-          setIsOpen(false);
-          navigate('/pages/blog');
-        },
-      });
-      setTimeout(() => {
-        setIsOpen(false);
-        navigate('/pages/blog');
-      }, 5000);
+      alert.show('Blog updated successfully');
       dispatch({
         type: ACTION_TYPES.UPDATE_BLOG,
         payload: res.data.data,
@@ -134,7 +109,7 @@ export const getAllAdminBlogs = () => {
   };
 };
 
-export const deleteBlog = (id, navigate, alert, isOpen, setIsOpen) => {
+export const deleteBlog = (id, alert, isOpen, setIsOpen) => {
   return async (dispatch) => {
     dispatch(selectProgressBarState(true));
     const res = await axiosInstance.delete('/api/v1/blog/deleteblog', {
@@ -142,18 +117,10 @@ export const deleteBlog = (id, navigate, alert, isOpen, setIsOpen) => {
         id: id,
       },
     });
-    console.log(res, 'res Delete blog');
     if (res.data.success === true) {
       dispatch(selectProgressBarState(false));
       setIsOpen(!isOpen);
-      alert.show('successfully Deleted Blog', {
-        onClose: () => {
-          navigate('/pages/blog');
-        },
-      });
-      setTimeout(() => {
-        navigate('/pages/blog');
-      }, 5000);
+      alert.show('successfully Deleted Blog');
     } else {
       dispatch(selectProgressBarState(false));
       alert.show('Error in deletion');

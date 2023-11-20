@@ -12,7 +12,6 @@ import FinderFour from "../Components/finderFour";
 import FinderFive from "../Components/finderFive";
 import FinderSix from "../Components/finderSix";
 import FinderSeven from "../Components/finderSeven";
-import FinderEight from "../Components/finderEight";
 import AboutUs from "../Screen/aboutus";
 import Accommodation from "../Components/accommodation";
 import AccommodationOne from "../Components/AccommodationOne";
@@ -54,7 +53,6 @@ function MainRoutes() {
       <Route path="/finderFive" element={<FinderFive />}></Route>
       <Route path="/finderSix" element={<FinderSix />}></Route>
       <Route path="/finderSeven" element={<FinderSeven />}></Route>
-      <Route path="/finderEight" element={<FinderEight />}></Route>
 
       
       <Route path="/accommodation" element={<Accommodation />}></Route>

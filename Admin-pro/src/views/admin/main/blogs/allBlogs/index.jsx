@@ -21,19 +21,33 @@ import {
 import Blog from 'components/card/Blog';
 import { SearchBar } from 'views/admin/nfts/profile/components/Search';
 import { useDispatch } from 'react-redux';
-import { getBlogs } from 'redux/Actions/BlogsActions';
+import { getBlogs, deleteBlog } from 'redux/Actions/BlogsActions';
 import { useSelector } from 'react-redux';
 import { baseURL } from 'constants/baseURL';
+import { useAlert } from 'react-alert';
 export default function Collection() {
   const dispatch = useDispatch();
+  const alert = useAlert();
 
   const textColor = useColorModeValue('secondaryGray.900', 'white');
 
+  const [deleteBlogId, setDeleteBlogId] = useState('');
+  const [refresh, setRefresh] = useState(false);
   const { blogs } = useSelector((state) => state.blogReducer);
 
   useEffect(() => {
     dispatch(getBlogs());
-  }, []);
+  }, [refresh]);
+
+  const deleteBlogFun = (id) => {
+    setDeleteBlogId(id);
+  };
+
+  useEffect(() => {
+    if (deleteBlogId !== '') {
+      dispatch(deleteBlog(deleteBlogId, alert, refresh, setRefresh));
+    }
+  }, [deleteBlogId]);
 
   // Chakra Color Mode
   return (
@@ -337,6 +351,8 @@ export default function Collection() {
                   author="By Admin"
                   image={baseURL + blog?.blogImage}
                   data={blog?.data}
+                  blogId={blog?._id}
+                  handleDeleteBlogFun={deleteBlogFun}
                   download={`/admin/main/blog/${blog._id}`}
                 />
               ))}

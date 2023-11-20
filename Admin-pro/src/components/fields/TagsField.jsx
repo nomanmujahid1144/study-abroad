@@ -13,14 +13,23 @@ import {
 import { useEffect, useState } from 'react';
 
 function TagsField(props) {
-  const { getTags, label, id, placeholderTags, ...rest } = props;
-  let initialTags = [];
+  const { getTags, value, label, id, placeholderTags, ...rest } = props;
+  console.log(value, 'TAGS');
+  // console.log(value.length, 'TAGS');
+  let initialTags = value;
   if (placeholderTags) initialTags = placeholderTags;
   const [tags, setTags] = useState(initialTags);
+  const [getTagsFromPrevious, setGetTagsFromPrevious] = useState(true);
+
+  // useEffect(() => {
+  //   setTags(value.length > 0 ? value : []);
+  // }, []);
 
   useEffect(() => {
-    getTags(tags);
-  }, [tags]);
+    if (tags.length > 0) {
+      getTags(tags);
+    }
+  }, [getTagsFromPrevious]);
 
   const keyPress = (e) => {
     if (e.keyCode === 13) {
@@ -33,6 +42,7 @@ function TagsField(props) {
         },
       ]);
       e.target.value = '';
+      setGetTagsFromPrevious(!getTagsFromPrevious);
     }
   };
 
@@ -73,9 +83,10 @@ function TagsField(props) {
               <TagCloseButton
                 justifySelf="flex-end"
                 color="white"
-                onClick={() =>
-                  setTags([...tags.filter((element) => element.id !== tag.id)])
-                }
+                onClick={() => {
+                  setTags([...tags.filter((element) => element.id !== tag.id)]);
+                  setGetTagsFromPrevious(!getTagsFromPrevious);
+                }}
               />
             </Tag>
           );

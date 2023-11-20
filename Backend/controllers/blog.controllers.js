@@ -42,6 +42,43 @@ exports.AddBlog = async (req, res, next) => {
     return next(new ErrorResponse(err, 400));
   }
 };
+exports.updateBlog = async (req, res, next) => {
+  try {
+
+    let body = req.body;
+    body.metaTags = JSON.parse(body.metaTags);
+    const id = req.query.id
+
+    console.log(req.files)
+
+    if (req.files) {
+      if (req.files.blogImage) {
+        const uploadedPath = await uploadImage(req.files.blogImage, next);
+        body.blogImage = uploadedPath.photoPath
+      }
+    }
+    
+    
+    
+    const updatedBlog = await Blog.updateOne({ _id: mongoose.Types.ObjectId(id) }, body)
+    if (updatedBlog.nModified !== 1) {
+        return res.status(200).json({
+            data: null,
+            message: 'update failed',
+            success: false
+        })
+    }
+
+    return res.status(200).json({
+        success: true,
+        data: null,
+        message: 'Blog Updated Successfully'
+    })
+
+  } catch (err) {
+    return next(new ErrorResponse(err, 400));
+  }
+}
 exports.GetBlog = async (req, res, next) => {
 
   try {
@@ -163,37 +200,3 @@ exports.deleteBlog = async (req, res, next) => {
   }
 }
 
-exports.updateBlog = async (req, res, next) => {
-  try {
-
-    let body = req.body;
-    const metaTags = JSON.parse(body.metaTags);
-    const userId = req.user.data[1];
-    const id = req.query.id
-
-    if (req.files) {
-      const uploadedPath = await uploadImage(req.files.blogImage, next);
-      body.blogImage = uploadedPath.photoPath
-    }
-    
-    
-    
-    const updatedBlog = await Blog.updateOne({ _id: mongoose.Types.ObjectId(id) }, body)
-    if (updatedBlog.nModified !== 1) {
-        return res.status(200).json({
-            data: null,
-            message: 'update failed',
-            success: false
-        })
-    }
-
-    return res.status(200).json({
-        success: true,
-        data: null,
-        message: 'Blog Updated Successfully'
-    })
-
-  } catch (err) {
-    return next(new ErrorResponse(err, 400));
-  }
-}

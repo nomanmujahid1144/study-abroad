@@ -143,7 +143,8 @@ export const userSignUp = (name, email, password, role ,value, navigate, message
           email,
           password,
           role: role,
-          phoneNumber: value
+          phoneNumber: value,
+          contacted: false
       });
       if (res.data.success) {
           setTimeout(() => {

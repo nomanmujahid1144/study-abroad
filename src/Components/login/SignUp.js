@@ -110,7 +110,7 @@ function Signup() {
                                 />
                                 <div className="mb-4">
                                       <button type="submit"
-                                        style={{width: '100%'}}
+                                        style={{width: '100% !important'}}
                                         className="btn-next w-100 mt-0 rounded">
                                         Register
                                     </button>

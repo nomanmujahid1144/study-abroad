@@ -170,6 +170,7 @@ exports.userSignup = async (req, res, next) => {
         phoneNumber: body.phoneNumber,
         roles: body.role,
         profilePhoto: body.profilePhoto,
+        
       });
       const token = jsonwebtoken.sign(
         {
@@ -507,7 +508,6 @@ exports.getWebsiteContactedUsers = async (req, res, next) => {
   }
 };
 exports.getWebsiteUnContactedUsers = async (req, res, next) => {
-  
   try {
     const allWebsiteUsers = await User.find({ 'roles.user': true, contacted : false }, {password: 0})
 
