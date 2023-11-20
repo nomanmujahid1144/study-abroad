@@ -16,12 +16,10 @@ import AboutUs from "../Screen/aboutus";
 import Accommodation from "../Components/accommodation";
 import AccommodationOne from "../Components/AccommodationOne";
 import AccommodationTwo from "../Components/AccommodationTwo";
-import AccommodationThree from "../Components/AccommodationThree";
 import Scholarships from "../Components/Scholarships";
 import ScholarshipsOne from "../Components/ScholarshipsOne";
 import ScholarshipsTwo from "../Components/ScholarshipsTwo";
 import ScholarshipsThree from "../Components/ScholarshipsThree";
-import ScholarshipsFour from "../Components/ScholarshipsFour";
 import ContactUs from "../Screen/contactUs";
 import ErrorPage from "../Screen/404Page";
 import Login from "../Components/login/Login";
@@ -58,13 +56,11 @@ function MainRoutes() {
       <Route path="/accommodation" element={<Accommodation />}></Route>
       <Route path="/accommodationOne" element={<AccommodationOne />}></Route>
       <Route path="/accommodationTwo" element={<AccommodationTwo />}></Route>
-      <Route path="/accommodationThree" element={<AccommodationThree />}></Route>
 
       <Route path="/scholarships" element={<Scholarships />}></Route>
       <Route path="/scholarshipsOne" element={<ScholarshipsOne />}></Route>
       <Route path="/scholarshipsTwo" element={<ScholarshipsTwo />}></Route>
       <Route path="/scholarshipsThree" element={<ScholarshipsThree />}></Route>
-      <Route path="/scholarshipsFour" element={<ScholarshipsFour />}></Route>
       
       <Route path="/" element={<Layout />}> 
           <Route index path="/" element={<LandingPage />}></Route>

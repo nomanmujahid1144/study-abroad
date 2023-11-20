@@ -58,13 +58,13 @@ function Clock() {
       </Container>
       <div className="whole-div-bggg1">
         <div className="bg-back-img">
-          <img src={Mail} alt="" className="img-mail" />
-          <img src={Air} alt="" className="img-mail1" />
-          <img src={Mail} alt="" className="img-mail2" />
-          <img src={Air} alt="" className="img-mail3" />
-          <img src={Air} alt="" className="img-mail4" />
+          <img src={Mail} alt="no-img" className="img-mail" />
+          <img src={Air} alt="no-img" className="img-mail1" />
+          <img src={Mail} alt="no-img" className="img-mail2" />
+          <img src={Air} alt="no-img" className="img-mail3" />
+          <img src={Air} alt="no-img" className="img-mail4" />
           <div className="bg-back-img1">
-            <img src={Men} alt="" className="img-menn" />
+            <img src={Men} alt="no-img" className="img-menn" />
             <Box>
               <p className="lorem-text">Universities</p>
               <p className="lorem-text1">
@@ -74,7 +74,7 @@ function Clock() {
                 <Link to="/finder" style={{ textDecoration: "none" }}>
                   <button className="btn-loremmm">Check University</button>
                 </Link>
-                <img src={Book} alt="" className="img-book" />
+                <img src={Book} alt="no-img" className="img-book" />
               </div>
             </Box>
             <div className="blue-box5">
@@ -87,7 +87,7 @@ function Clock() {
                 <button className="btn-lorem" onClick={openVisaModal}>
                   Visa Experts
                 </button>
-                <img src={Passport} alt="" className="img-book" />
+                <img src={Passport} alt="no-img" className="img-book" />
               </div>
             </div>
             <Modal
@@ -117,7 +117,7 @@ function Clock() {
                   >
                     <button className="btn-lorem">IELTS</button>
                   </Link>
-                  <img src={Built} alt="" className="img-book" />
+                  <img src={Built} alt="no-img" className="img-book" />
                 </div>
               </div>
               <div className="blue-box2">
@@ -133,7 +133,7 @@ function Clock() {
                     </button>
                   </Link>
 
-                  <img src={Grad} alt="" className="img-book" />
+                  <img src={Grad} alt="no-img" className="img-book" />
                 </div>
               </div>
             </div>
@@ -148,7 +148,7 @@ function Clock() {
                   <button className="btn-loremm" onClick={openLoanModal}>
                     Loan Expert
                   </button>
-                  <img src={Calcu} alt="" className="img-book" />
+                  <img src={Calcu} alt="no-img" className="img-book" />
                 </div>
                 <Modal
                   className="style-modal"
@@ -171,9 +171,9 @@ function Clock() {
                   <Link to="/scholarships" style={{ textDecoration: "none" }}>
                     <button className="btn-loremm">Find Scholarship</button>
                   </Link>
-                  <img src={Feather} alt="" className="img-book1" />
-                  <img src={Feather} alt="" className="img-book2" />
-                  <img src={Feather} alt="" className="img-book3" />
+                  <img src={Feather} alt="no-img" className="img-book1" />
+                  <img src={Feather} alt="no-img" className="img-book2" />
+                  <img src={Feather} alt="no-img" className="img-book3" />
                 </div>
               </div>
             </div>
@@ -190,7 +190,7 @@ function Clock() {
             <Link to="/accommodation" style={{ textDecoration: "none" }}>
               <button className="btn-lorem">Check University</button>
             </Link>
-            <img src={Book} alt="" className="img-book" />
+            <img src={Book} alt="no-img" className="img-book" />
           </div>
         </div>
 
@@ -205,7 +205,7 @@ function Clock() {
               <button className="btn-lorem" onClick={openVisaModalmbl}>
                 Visa Experts
               </button>
-              <img src={Passport} alt="" className="img-book" />
+              <img src={Passport} alt="no-img" className="img-book" />
             </div>
             <Modal
               className="style-modal"
@@ -231,7 +231,7 @@ function Clock() {
               >
                 <button className="btn-lorem">IELTS</button>
               </Link>
-              <img src={Built} alt="" className="img-book" />
+              <img src={Built} alt="no-img" className="img-book" />
             </div>
           </div>
         </div>
@@ -246,7 +246,7 @@ function Clock() {
               <Link to="/accommodation">
                 <button className="btn-loremmm">Student Accomodation</button>
               </Link>
-              <img src={Grad} alt="" className="img-book" />
+              <img src={Grad} alt="no-img" className="img-book" />
             </div>
           </div>
           <div className="blue-box4">
@@ -259,9 +259,9 @@ function Clock() {
               <Link to="/scholarships" style={{ textDecoration: "none" }}>
                 <button className="btn-loremm">Find Scholarship</button>
               </Link>
-              <img src={Feather} alt="" className="img-book1" />
-              <img src={Feather} alt="" className="img-book2" />
-              <img src={Feather} alt="" className="img-book3" />
+              <img src={Feather} alt="no-img" className="img-book1" />
+              <img src={Feather} alt="no-img" className="img-book2" />
+              <img src={Feather} alt="no-img" className="img-book3" />
             </div>
           </div>
           <div className="blue-box3">
@@ -274,7 +274,7 @@ function Clock() {
               <button className="btn-loremm" onClick={openLoanModalmbl}>
                 Loan Expert
               </button>
-              <img src={Calcu} alt="" className="img-book" />
+              <img src={Calcu} alt="no-img" className="img-book" />
             </div>
             <Modal
               className="style-modal"
