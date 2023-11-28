@@ -91,8 +91,8 @@ function HeroSection() {
               </Col>
               <Col>
                 <div className="center-col">
-                  <img src={Men} alt="" className="big-img-size" />
-                  <img src={SmallA3} alt="" className="random-arrow" />
+                  <img src={Men} alt="no-img" className="big-img-size" />
+                  <img src={SmallA3} alt="no-img" className="random-arrow" />
                 </div>
               </Col>
             </Row>

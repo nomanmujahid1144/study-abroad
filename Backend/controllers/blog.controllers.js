@@ -3,8 +3,6 @@ const Blog = require('../models/Blog');
 const mongoose = require('mongoose');
 const { uploadImage } = require('../helpers/helpers');
 
-
-
 exports.AddBlog = async (req, res, next) => {
   try {
 
@@ -118,6 +116,7 @@ exports.GetSingleAdminBlogs = async (req, res, next) => {
 exports.GetBlogById = async (req, res, next) => {
 
   try {
+    console.log(req.query, 'req.query')
     const singleblog = await Blog.findById({ _id: mongoose.Types.ObjectId(req.query.id) }).populate('userId');
 
     if (!singleblog) {

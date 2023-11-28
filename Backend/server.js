@@ -53,6 +53,7 @@ const limiter = rateLimit({
 const user = require("./routes/user");
 const admin = require("./routes/admin");
 const blog = require("./routes/blog");
+const domain = require("./routes/domain");
 const about = require("./routes/about");
 const contactmails = require("./routes/contactmails");
 const universityFinder = require("./routes/universityfinder");
@@ -75,6 +76,7 @@ app.use(cors());
 app.use("/api/v1/user", user);
 app.use("/api/v1/admin", admin);
 app.use("/api/v1/blog", blog);
+app.use("/api/v1/domain", domain);
 app.use("/api/v1/about", about);
 app.use("/api/v1/contacts", contactmails);
 app.use("/api/v1/universityFinder", universityFinder);

@@ -6,6 +6,7 @@ import universityFinderReducer from './UniversityfinderReducer';
 import scholarshipReducer from './ScholarshipReducer';
 import accomodationReducer from './AccomodationsReducer';
 import blogReducer from './BlogReducer';
+import domainReducer from './DomainReducer';
 import DashboardReducer from './DashboardReducers';
 import formSubmissionReducer from './FormSubmissionReducer';
 
@@ -20,6 +21,7 @@ const rootReducer = combineReducers({
   scholarshipReducer,
   accomodationReducer,
   blogReducer,
+  domainReducer,
   formSubmissionReducer,
   DashboardReducer,
 });

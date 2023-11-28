@@ -26,10 +26,8 @@
   border: none;
 }
 .lorembutt44:hover {
-  transform: translateY(
-    -3px
-  ); /* Adjust the value as needed for the desired amount of movement */
-  transition: transform 0.2s ease; /* Add a smooth transition for the effect */
+  transform: translateY(-3px);
+  transition: transform 0.2s ease;
 }
 .imgyellow {
   position: absolute;

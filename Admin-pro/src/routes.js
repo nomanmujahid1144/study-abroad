@@ -36,7 +36,7 @@ import UsersUnContactedConsultationFormSubmitted from 'views/admin/main/users/ov
 import UsersReports from 'views/admin/main/users/reports';
 
 import BlogNew from 'views/admin/main/blogs/newBlog';
-import SingleBlog from 'views/admin/main/blogs/singleBlog';
+import NewDomain from 'views/admin/main/blogs/newDomain';
 import AllBlogs from 'views/admin/main/blogs/allBlogs/index';
 
 import ProfileSettings from 'views/admin/main/profile/settings';
@@ -158,6 +158,13 @@ const routes = [
     icon: <Icon as={MdDashboard} width="20px" height="20px" color="inherit" />,
     collapse: true,
     items: [
+      {
+        name: 'Add Domains',
+        layout: '/admin',
+        path: '/main/domain/new-domain',
+        exact: false,
+        component: <NewDomain />,
+      },
       {
         name: 'New Blog',
         layout: '/admin',

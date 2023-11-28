@@ -81,7 +81,7 @@ function Footer() {
                               <tbody>
                                   <tr className="mb-2"> 
                                       <td className="p-1">
-                                          <img alt="no img" src={india} className="pt-2 footer-flags" />
+                                          <img alt="no img" src={india} className="pt-2 footer-flags" width="100" />
                                       </td>
                                       <td className="p-1">
                                           <p className="px-2 mb-0 text-light">
@@ -92,7 +92,7 @@ function Footer() {
                                   </tr>
                                   <tr className="mb-2">  
                                       <td className="p-1">
-                                          <img alt="no img" src={india} className="pt-2 footer-flags" />
+                                          <img alt="no img" src={india} className="pt-2 footer-flags" width="100" />
                                       </td>
                                       <td className="p-1">
                                           <p className="px-2 mb-0 text-light">
@@ -103,7 +103,7 @@ function Footer() {
                                   </tr>
                                   <tr className="mb-2">
                                       <td className="p-1">
-                                          <img alt="no img" src={singapur} className="pt-2 footer-flags" />
+                                          <img alt="no img" src={singapur} className="pt-2 footer-flags" width="100" />
                                       </td>
                                       <td className="p-1">
                                           <p className="px-2 mb-0 text-light">
@@ -114,7 +114,7 @@ function Footer() {
                                   </tr>
                                   <tr className="mb-2">
                                       <td className="p-1">
-                                          <img alt="no img" src={australia} className="pt-2 footer-flags" />
+                                          <img alt="no img" src={australia} className="pt-2 footer-flags" width="100" />
                                       </td>
                                       <td className="p-1">
                                           <p className="px-2 mb-0 text-light">
@@ -125,7 +125,7 @@ function Footer() {
                                   </tr>
 					             <tr className="mb-2">
                                       <td className="p-1">
-                                          <img alt="no img" src={canada} className="pt-2 footer-flags" />
+                                          <img alt="no img" src={canada} className="pt-2 footer-flags" width="100" />
                                       </td>
                                       <td className="p-1">
                                           <p className="px-2 mb-0 text-light">
