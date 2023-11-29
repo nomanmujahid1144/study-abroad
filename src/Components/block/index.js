@@ -31,7 +31,7 @@ function Block() {
             <p className="text-our">Our Latest Blog</p>
             <p className="text-ts">hear from our students</p>
           </div>
-          <Link to="/blogs" style={{ textDecoration: "none" }}>
+          <Link to="/blog" style={{ textDecoration: "none" }}>
             <button className="btn-seeall">
               See all <img src={Arrow} alt="" className="im-size" />
             </button>

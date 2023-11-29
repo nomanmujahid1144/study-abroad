@@ -79,9 +79,6 @@ export default function Default() {
           gap="20px"
           display={{ base: 'block', lg: 'grid' }}
         >
-          {/* <Flex gridArea={{ base: '1 / 1 / 2 / 3', '2xl': '1 / 1 / 2 / 2' }}>
-            <OverallRevenue />
-          </Flex> */}
           <Flex gridArea={{ base: '2 / 1 / 3 / 3', '2xl': '1 / 2 / 2 / 3' }}>
             <Balance
               TextHeading="Total Accomodation Forms"
@@ -99,13 +96,14 @@ export default function Default() {
           gap="20px"
           display={{ base: 'block', lg: 'grid' }}
         >
-          {/* <Flex gridArea={{ base: '1 / 1 / 2 / 3', '2xl': '1 / 1 / 2 / 2' }}>
-            <OverallRevenue />
-          </Flex> */}
           <Flex gridArea={{ base: '2 / 1 / 3 / 3', '2xl': '1 / 2 / 2 / 3' }}>
             <Balance
               TextHeading="Total University Finder Forms"
               totalCount={counts.totalUniversityFinders}
+            />
+            <Balance
+              TextHeading="Total Consultation Forms"
+              totalCount={counts.totalFormSubmissions}
             />
           </Flex>
         </Grid>

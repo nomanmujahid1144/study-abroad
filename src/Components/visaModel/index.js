@@ -45,10 +45,10 @@ function VisaExpertModal({handleCloseModal}) {
           <Col>
             <div className="center-modal">
               <div>
-                <h1 className="text-modal">
+                <h2 className="text-modal">
                   “Find the best <br /> courses and
                   <br /> universities”
-                </h1>
+                </h2>
               </div>
             </div>
           </Col>

@@ -62,7 +62,7 @@ function RealGuidance() {
             onCancel={handleCancel}
             footer
           >
-            <ExpertModal />
+            <ExpertModal handleCloseModal={handleCancel} />
           </Modal>
         </div>
       </div>

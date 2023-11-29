@@ -5,6 +5,7 @@ const Blog = require('../models/Blog');
 const UniversityFinder = require('../models/UniversityFinder');
 const Scholarship = require('../models/Scholarship');
 const Accmodation = require('../models/Accmodation');
+const FormSubmissons = require('../models/FormSubmissons');
 const { uploadImage } = require('../helpers/helpers');
 const fs = require('fs');
 const bcrypt = require('bcrypt');
@@ -125,6 +126,7 @@ exports.getDashboardData = async (req, res, next) => {
         const totalUniversityFinders =await UniversityFinder.find({});
         const totalScholarships =await Scholarship.find({});
         const totalAccmodations =await Accmodation.find({});
+        const totalFormSubmissions =await FormSubmissons.find({});
 
         console.log(totalUsers)
 
@@ -136,7 +138,8 @@ exports.getDashboardData = async (req, res, next) => {
                 totalBlogs : totalBlogs.length > 0 ? totalBlogs.length : 0,
                 totalUniversityFinders : totalUniversityFinders.length > 0 ? totalUniversityFinders.length : 0,
                 totalScholarships: totalScholarships.length > 0 ? totalScholarships.length : 0,
-                totalAccmodations: totalAccmodations.length > 0 ? totalAccmodations.length : 0
+                totalAccmodations: totalAccmodations.length > 0 ? totalAccmodations.length : 0,
+                totalFormSubmissions: totalFormSubmissions.length > 0 ? totalFormSubmissions.length : 0
             }
         });
 

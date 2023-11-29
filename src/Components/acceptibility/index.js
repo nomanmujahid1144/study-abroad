@@ -1,8 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import "./style.css";
-import { Avatar, Card} from "antd";
+import { Avatar, Card, Modal} from "antd";
 import { Container } from "react-bootstrap";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import ExpertModal from "../modal";
 
 function Acceptability() {
 
@@ -38,6 +39,17 @@ function Acceptability() {
       countryName: 'Ireland'
     },
   ]
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <>
@@ -90,13 +102,24 @@ function Acceptability() {
                 </Card>
             </div>
           </div>
-          <Link to={"/finder"}>
+          {/* <Link to={"/finder"}>
+            </Link> */}
               <div className="baadcen">
-                <button className="lorembutt23">
+                <button onClick={showModal} className="lorembutt23">
                   See Demo <img alt="abc" src="../images/right.svg" />
                 </button>
-              </div>
-            </Link>
+            </div>
+            <div>
+            <Modal
+              className="style-modal"
+              open={isModalOpen}
+              onOk={handleOk}
+              onCancel={handleCancel}
+              footer
+            >
+              <ExpertModal handleCloseModal={handleCancel} />
+            </Modal>
+          </div>
       </Container>
     </div>
     </>

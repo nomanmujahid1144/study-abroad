@@ -1,7 +1,7 @@
 import axios from 'axios';
 export const axiosInstance = axios.create({
-  baseURL: 'http://localhost:1212',
-  // baseURL: 'https://server.thestudenthelpline.co.in',
+  // baseURL: 'http://localhost:1212',
+  baseURL: 'https://server.thestudenthelpline.co.in',
 });
 
 const addTokenToRequest = (config) => {

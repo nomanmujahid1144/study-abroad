@@ -18,7 +18,7 @@ function Review() {
                 <div className="white-div-card">
                   <div className="div-google">
                     <div>
-                      <h1 className="text-num">4.6</h1>
+                      <h2 className="text-num">4.6</h2>
                       <h3 className="text-reeee">
                         Google
                         <br /> Review
@@ -44,7 +44,7 @@ function Review() {
                 <div className="white-div-card">
                   <div className="div-google">
                     <div>
-                      <h1 className="text-num">4.6</h1>
+                      <h2 className="text-num">4.6</h2>
                       <h3 className="text-reeee">
                         Facebook
                         <br /> Review

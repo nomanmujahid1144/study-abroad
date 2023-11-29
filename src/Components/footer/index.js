@@ -22,7 +22,7 @@ function Footer() {
                     </h1>
                     <div className="social-icons-btn">
                         <a className="icons twitter" href="https://twitter.com/thestudent_help">
-                            <FontAwesomeIcon icon="fa-brands fa-twitter" />
+                            <FontAwesomeIcon icon="fa-brands fa-x-twitter" />
                         </a>
                         <a className="icons facebook" href="https://www.facebook.com/TheStudentHelpline/">
                             <FontAwesomeIcon icon="fa-brands fa-facebook-f" />

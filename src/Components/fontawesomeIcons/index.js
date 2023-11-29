@@ -19,12 +19,12 @@ import {
     faWhatsapp,
     faTelegram,
     faInstagram,
-    faTwitter,
+    faXTwitter,
     faLinkedinIn
 } from '@fortawesome/free-brands-svg-icons' 
 
 library.add(
     faPlay, faTrash , faPlus , faCartShopping ,
     faLocationDot , faLocationCrosshairs , faCircleInfo ,  faXmark , faMapLocation , faEnvelope ,
-    faPhone , faMessage , faWhatsapp  , faTelegram , faInstagram , faTwitter, faFacebookF, faLinkedinIn
+    faPhone , faMessage , faWhatsapp  , faTelegram , faInstagram , faXTwitter, faFacebookF, faLinkedinIn
     ) 

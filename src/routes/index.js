@@ -64,7 +64,7 @@ function MainRoutes() {
       
       <Route path="/" element={<Layout />}> 
           <Route index path="/" element={<LandingPage />}></Route>
-          <Route path="/blogs" element={<BlogPage />}></Route>
+          <Route path="/blog" element={<BlogPage />}></Route>
           <Route path="/blog/:url" element={<ArticleMain />}></Route>
           
           <Route path="/profile" element={<Profile />}></Route>

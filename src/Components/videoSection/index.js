@@ -67,7 +67,7 @@ function VideoSection() {
     <>
       <div className="div-texted12 main-container">
         <p className="test-text23">Testimonials</p>
-        <h1 className="hear-text">hear from our students</h1>
+        <h2 className="hear-text">hear from our students</h2>
       </div>
       <div className="container">
         <div className="row">

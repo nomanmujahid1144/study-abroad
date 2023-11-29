@@ -247,7 +247,7 @@ function CollapsibleExample() {
                 </Nav.Link>
                 <Nav.Link>
                   <Link
-                    to="/blogs"
+                    to="/blog"
                     style={{ textDecoration: "none", color: "#000000" }}
                   >
                     Blog
