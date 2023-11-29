@@ -6,6 +6,11 @@ import DashboardsDefault from 'views/admin/dashboards/default/contentIndex';
 import BlogNew from 'views/admin/main/blogs/newBlog';
 import AllBlogs from 'views/admin/main/blogs/allBlogs/adminBlogs';
 
+// import BlogNew from 'views/admin/main/blogs/newBlog';
+import NewDomain from 'views/admin/main/blogs/newDomain';
+// import AllBlogs from 'views/admin/main/blogs/allBlogs/index';
+import AllDomainBlogs from 'views/admin/main/blogs/allBlogs/allDomainBlogs';
+
 const routes = [
   // --- Dashboards ---
   {
@@ -22,6 +27,13 @@ const routes = [
     collapse: true,
     items: [
       {
+        name: 'Add Domains',
+        layout: '/admin',
+        path: '/main/domain/new-domain',
+        exact: false,
+        component: <NewDomain />,
+      },
+      {
         name: 'New Blog',
         layout: '/admin',
         path: '/main/blog/new-blog',
@@ -33,6 +45,13 @@ const routes = [
         layout: '/admin',
         path: '/main/blog/all-blogs',
         component: <AllBlogs />,
+        secondary: true,
+      },
+      {
+        name: 'Domain Blogs',
+        layout: '/admin',
+        path: '/main/blog/all-domainblogs',
+        component: <AllDomainBlogs />,
         secondary: true,
       },
     ],
