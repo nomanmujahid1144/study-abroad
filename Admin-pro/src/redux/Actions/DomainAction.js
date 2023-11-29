@@ -17,6 +17,7 @@ export const addDomain = (domainData, navigate, alert, onModelClose) => {
         },
       });
       onModelClose();
+      dispatch(getAllDomains());
       dispatch({
         type: ACTION_TYPES.SET_DOMAIN,
         payload: res.data.data,
@@ -28,7 +29,7 @@ export const addDomain = (domainData, navigate, alert, onModelClose) => {
   };
 };
 
-export const updateDomain = (id, formData, alert) => {
+export const updateDomain = (id, formData, alert, onClose) => {
   return async (dispatch) => {
     dispatch(selectProgressBarState(true));
     const res = await axiosInstance.post(
@@ -43,6 +44,8 @@ export const updateDomain = (id, formData, alert) => {
     if (res.data.success === true) {
       dispatch(selectProgressBarState(false));
       alert.show('Domain updated successfully');
+      onClose();
+      dispatch(getAllDomains());
       dispatch({
         type: ACTION_TYPES.UPDATE_DOMAIN,
         payload: res.data.data,
@@ -86,6 +89,7 @@ export const deleteDomain = (id, alert) => {
     if (res.data.success === true) {
       dispatch(selectProgressBarState(false));
       alert.show('successfully Deleted Domain');
+      dispatch(getAllDomains());
     } else {
       dispatch(selectProgressBarState(false));
       alert.show('Error in deletion');

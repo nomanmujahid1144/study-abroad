@@ -3,6 +3,7 @@ import { ACTION_TYPES } from '../ActionTypes/ActionTypes';
 const initialState = {
   blog: {},
   blogs: [],
+  domainBlogs: [],
   singleAdminBlogs: [],
 };
 
@@ -24,6 +25,12 @@ const BlogReducer = (state = initialState, action) => {
       return {
         ...state,
         blogs: action.payload,
+      };
+    }
+    case ACTION_TYPES.GET_ALL_DOMAIN_BLOGS: {
+      return {
+        ...state,
+        domainBlogs: action.payload,
       };
     }
     case ACTION_TYPES.GET_ALL_ADMIN_BLOGS: {

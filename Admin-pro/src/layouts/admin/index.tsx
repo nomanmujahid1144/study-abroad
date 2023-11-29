@@ -162,7 +162,7 @@ export default function Dashboard(props: { [x: string]: any }) {
                   path="/main/profile/settings"
                   element={<ProfileSettings />}
                 />
-                <Route path="/main/blog/:id" element={<SingleBlog />} />
+                <Route path="/main/single-blog/:id" element={<SingleBlog />} />
                 <Route path="/main/updateblog/:id" element={<NewBlog />} />
                 <Route path="/main/users/edit-user/:id" element={<UserNew />} />
               </Routes>

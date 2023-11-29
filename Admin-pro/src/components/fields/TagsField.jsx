@@ -14,16 +14,15 @@ import { useEffect, useState } from 'react';
 
 function TagsField(props) {
   const { getTags, value, label, id, placeholderTags, ...rest } = props;
-  console.log(value, 'TAGS');
-  // console.log(value.length, 'TAGS');
-  let initialTags = value;
-  if (placeholderTags) initialTags = placeholderTags;
-  const [tags, setTags] = useState(initialTags);
+
+  const [tags, setTags] = useState([]);
   const [getTagsFromPrevious, setGetTagsFromPrevious] = useState(true);
 
-  // useEffect(() => {
-  //   setTags(value.length > 0 ? value : []);
-  // }, []);
+  useEffect(() => {
+    if (value.length > 0) {
+      setTags(value);
+    }
+  }, []);
 
   useEffect(() => {
     if (tags.length > 0) {

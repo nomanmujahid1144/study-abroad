@@ -19,7 +19,11 @@ import { getWebsitessContactedUsers } from 'redux/Actions/UserActions';
 import SearchTableUsers from './components/NewDomainsTable';
 import { useDisclosure } from '@chakra-ui/hooks';
 import { MdClose } from 'react-icons/md';
-import { addDomain, getAllDomains } from 'redux/Actions/DomainAction';
+import {
+  addDomain,
+  getAllDomains,
+  updateDomain,
+} from 'redux/Actions/DomainAction';
 import { useNavigate } from 'react-router-dom';
 import { useAlert } from 'react-alert';
 
@@ -30,6 +34,8 @@ export default function NewDomain() {
   const dispatch = useDispatch();
   const alert = useAlert();
   const navigate = useNavigate();
+  const [edit, setEdit] = useState(false);
+  const [editId, setEditId] = useState('');
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const { domains } = useSelector((state) => state.domainReducer);
@@ -41,7 +47,17 @@ export default function NewDomain() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch(addDomain(credentials, navigate, alert, onClose));
+    if (edit) {
+      dispatch(updateDomain(editId, credentials, alert, onClose)).then(() => {
+        setEdit(false);
+        setEditId('');
+        dispatch(getAllDomains());
+      });
+    } else {
+      dispatch(addDomain(credentials, navigate, alert, onClose)).then(() => {
+        dispatch(getAllDomains());
+      });
+    }
   };
 
   const onChange = (e) => {
@@ -51,6 +67,29 @@ export default function NewDomain() {
   useEffect(() => {
     dispatch(getAllDomains());
   }, []);
+
+  const handleNewDomainOpener = () => {
+    setEdit(false);
+    setEditId('');
+    setcredentials({
+      websiteName: '',
+      domain: '',
+    });
+    onOpen();
+  };
+
+  const handleEdit = (id) => {
+    const domain = domains.find((domain) => domain._id === id);
+    if (domain) {
+      setEdit(true);
+      setEditId(domain._id);
+      setcredentials({
+        websiteName: domain.websiteName,
+        domain: domain.domain,
+      });
+      onOpen();
+    }
+  };
 
   return (
     <Flex direction="column" pt={{ sm: '125px', lg: '75px' }}>
@@ -66,9 +105,9 @@ export default function NewDomain() {
             fontWeight="500"
             w="13%"
             h="50"
-            onClick={onOpen}
+            onClick={handleNewDomainOpener}
           >
-            Add Domains
+            Add New Domain
           </Button>
         </Flex>
       </Card>
@@ -92,7 +131,7 @@ export default function NewDomain() {
                 fontSize={'2xl'}
                 fontWeight={'bold'}
               >
-                Add New Domain
+                {edit ? 'Edit Domain' : 'Add New Domain'}
               </Text>
               {/* <Text mb={'2'} textAlign={'start'}>
                 Do you want to delete this blog?
@@ -156,7 +195,7 @@ export default function NewDomain() {
                     h="50"
                     mb="24px"
                   >
-                    Add Domain
+                    {edit ? 'Update Domain' : 'Add Domain'}
                   </Button>
                 </FormControl>
               </form>
@@ -171,6 +210,7 @@ export default function NewDomain() {
             <SearchTableUsers
               tableData={domains?.length > 0 ? domains : []}
               isComanyUsers={false}
+              handleEdit={handleEdit}
             />
           ) : null}
         </Card>

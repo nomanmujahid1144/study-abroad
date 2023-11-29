@@ -52,7 +52,7 @@ import { IoPencil, IoTrashOutline } from 'react-icons/io5';
 import { deleteDomain } from 'redux/Actions/DomainAction';
 
 export default function SearchTableOrders(props) {
-  const { tableData, isComanyUsers } = props;
+  const { tableData, isComanyUsers, handleEdit } = props;
   const navigate = useNavigate();
   const textColor = useColorModeValue('navy.700', 'white');
   const borderColor = useColorModeValue('gray.200', 'whiteAlpha.100');
@@ -62,7 +62,6 @@ export default function SearchTableOrders(props) {
   const [columnFilters, setColumnFilters] = React.useState([]);
   let defaultData = tableData;
   const [globalFilter, setGlobalFilter] = React.useState('');
-  const [userId, setUserId] = React.useState('');
   const btnRef = React.useRef();
   let sidebarBackgroundColor = useColorModeValue('white', 'navy.800');
   const dispatch = useDispatch();
@@ -70,6 +69,10 @@ export default function SearchTableOrders(props) {
 
   const handleDeleteDomain = (id) => {
     dispatch(deleteDomain(id, alert));
+  };
+
+  const handleEditDomain = (id) => {
+    handleEdit(id);
   };
 
   const columnHelper = createColumnHelper({
@@ -144,6 +147,7 @@ export default function SearchTableOrders(props) {
             border={'1px'}
             minW="36px"
             h="36px"
+            onClick={() => handleEditDomain(info.getValue())}
           >
             <Icon
               transition="0.2s linear"

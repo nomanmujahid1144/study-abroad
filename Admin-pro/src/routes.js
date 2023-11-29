@@ -38,6 +38,7 @@ import UsersReports from 'views/admin/main/users/reports';
 import BlogNew from 'views/admin/main/blogs/newBlog';
 import NewDomain from 'views/admin/main/blogs/newDomain';
 import AllBlogs from 'views/admin/main/blogs/allBlogs/index';
+import AllDomainBlogs from 'views/admin/main/blogs/allBlogs/allDomainBlogs';
 
 import ProfileSettings from 'views/admin/main/profile/settings';
 import ProfileOverview from 'views/admin/main/profile/overview';
@@ -177,6 +178,13 @@ const routes = [
         layout: '/admin',
         path: '/main/blog/all-blogs',
         component: <AllBlogs />,
+        secondary: true,
+      },
+      {
+        name: 'Domain Blogs',
+        layout: '/admin',
+        path: '/main/blog/all-domainblogs',
+        component: <AllDomainBlogs />,
         secondary: true,
       },
     ],

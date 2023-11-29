@@ -7,6 +7,7 @@ exports.AddBlog = async (req, res, next) => {
   try {
 
     let body = req.body;
+    console.log(body)
     const metaTags = JSON.parse(body.metaTags);
     const userId = req.user.data[1];
     if (!req.files) {
@@ -29,7 +30,7 @@ exports.AddBlog = async (req, res, next) => {
   const addedProduct = await product.save()
     
   if (!addedProduct) {
-      return next(new ErrorResponse('add product failed', 400))
+      return next(new ErrorResponse('add blog failed', 400))
   }
   return res.status(200).json({
       success: true,
@@ -44,6 +45,7 @@ exports.updateBlog = async (req, res, next) => {
   try {
 
     let body = req.body;
+    console.log(body)
     body.metaTags = JSON.parse(body.metaTags);
     const id = req.query.id
 
@@ -94,21 +96,79 @@ exports.GetBlog = async (req, res, next) => {
     return next(new ErrorResponse(err, 400));
   }
 };
-exports.GetSingleAdminBlogs = async (req, res, next) => {
+exports.GetAllBlogsWithDomains = async (req, res, next) => {
 
   try {
-
-    const userId = req.user.data[1];
-    const allblogs = await Blog.find({userId : mongoose.Types.ObjectId(userId)});
-
-    if (!allblogs) {
+    console.log('rer')
+    const allBlogs = await Blog.find({})
+      .populate('domainId') // Populate the domain details
+  
+    if (!allBlogs) {
       return next(new ErrorResponse("Blogs Getting Failed", 400));
     }
+  
+    // Now, transform the result into the desired format
+    const resultArray = allBlogs.map(blog => ({
+      domainName: blog.domainId.websiteName, // Assuming 'websiteName' is the property in your 'Domain' model
+      domain: blog.domainId.domain, // Assuming 'websiteName' is the property in your 'Domain' model
+      domainId: blog.domainId._id, // Assuming 'websiteName' is the property in your 'Domain' model
+      blogs: [blog]
+    }));
+  
+    // Merge blogs with the same domain into a single object
+    const finalResult = resultArray.reduce((acc, current) => {
+      const existingDomain = acc.find(item => item.domainName === current.domainName);
+      if (existingDomain) {
+        existingDomain.blogs = existingDomain.blogs.concat(current.blogs);
+      } else {
+        acc.push(current);
+      }
+      return acc;
+    }, []);
+  
     return res.status(200).json({
       success: true,
       message: "Successfully Get Blogs",
-      data: allblogs,
+      data: finalResult,
     });
+  
+  } catch (err) {
+    console.log(err)
+    return next(new ErrorResponse(err, 400));
+  }
+  
+};
+exports.GetDomainBlogs = async (req, res, next) => {
+  try {
+
+    const singleblog = await Blog.find({domainId : mongoose.Types.ObjectId(req.query.domainId)}, {_id: 0, userId: 0, lastUpdated: 0, domainId: 0, __v : 0})
+
+    console.log(singleblog)
+
+    if (!singleblog) {
+      // return next(new ErrorResponse("Blogs Getting Failed", 400));
+      return res.status(404).json({
+        success: false,
+        message: "Blog not found",
+        data: null,
+      });
+    }
+    if (singleblog.length > 0) {
+      return res.status(200).json({
+        success: true,
+        message: "Successfully Get Blog",
+        data: {
+          Note: `Please add this ${process.env.LIVE_SERVER_URL} baseURL before blogImage so that you can get the exect image.`,
+          blogs: singleblog
+        },
+      });
+    } else {
+      return res.status(200).json({
+        success: true,
+        message: "There is no Blog yet on this domain",
+        data: [],
+      });
+    }
   } catch (err) {
     return next(new ErrorResponse(err, 400));
   }
@@ -117,7 +177,7 @@ exports.GetBlogById = async (req, res, next) => {
 
   try {
     console.log(req.query, 'req.query')
-    const singleblog = await Blog.findById({ _id: mongoose.Types.ObjectId(req.query.id) }).populate('userId');
+    const singleblog = await Blog.findById({ _id: mongoose.Types.ObjectId(req.query.id) }).populate('userId').populate('domainId');
 
     if (!singleblog) {
       return next(new ErrorResponse("Blogs Getting Failed", 400));

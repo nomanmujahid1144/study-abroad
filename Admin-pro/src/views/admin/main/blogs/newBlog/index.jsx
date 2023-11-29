@@ -62,6 +62,7 @@ import { useDispatch } from 'react-redux';
 import { transformString } from 'constants/helperFunction';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { getAllDomains } from 'redux/Actions/DomainAction';
 
 export default function NewProduct() {
   const textColor = useColorModeValue('secondaryGray.900', 'white');
@@ -74,7 +75,7 @@ export default function NewProduct() {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const params = useParams();
+  const { id } = useParams();
   const alert = useAlert();
 
   const productTab = React.useRef();
@@ -89,6 +90,9 @@ export default function NewProduct() {
   const brand = useColorModeValue(lineColor, lineColorDark);
   const [selectedImage, setSelectedImage] = useState(null);
   const [tags, setTags] = useState([]);
+
+  const textColorPrimary = useColorModeValue('secondaryGray.900', 'white');
+
   const [formDatas, setFormData] = useState({
     blogHeading: '',
     blogImage: null,
@@ -97,7 +101,12 @@ export default function NewProduct() {
     metaDescription: '',
     url: '',
     metaTags: [],
+    domainId: null,
   });
+  const { domains } = useSelector((state) => state.domainReducer);
+  // EDIT BLOG CODING
+
+  const { blog } = useSelector((state) => state.blogReducer);
 
   function uploadAdapter(loader) {
     return {
@@ -144,6 +153,64 @@ export default function NewProduct() {
     return Array.isArray(arr) && arr.every((item) => typeof item === 'string');
   }
 
+  useEffect(() => {
+    if (id) {
+      dispatch(getBlogById(id));
+    } else {
+      setFormData({
+        blogHeading: '',
+        blogImage: null,
+        data: '',
+        metaTitle: '',
+        metaDescription: '',
+        url: '',
+        metaTags: [],
+        domainId: null,
+      });
+      setTags([]);
+      setSelectedImage(null);
+    }
+  }, [id]);
+
+  // useEffect(() => {
+  //   if (blog) {
+  //     if (Object.keys(blog).length > 0) {
+  //       setFormData((prevData) => ({
+  //         ...prevData,
+  //         blogHeading: blog?.blogHeading || '',
+  //         blogImage: blog?.blogImage || null,
+  //         data: blog?.data || '',
+  //         metaTitle: blog?.metaTitle || '',
+  //         metaDescription: blog?.metaDescription || '',
+  //         url: blog?.url || '',
+  //         metaTags: blog?.metaTags || [],
+  //         domainId: blog?.domainId || null,
+  //       }));
+
+  //       if (blog?.metaTags && blog.metaTags.length > 0) {
+  //         let arr = blog.metaTags.map((element, index) => ({
+  //           name: element,
+  //           id: index + 1,
+  //         }));
+  //         setTags(arr);
+  //       }
+  //     }
+  //   } else {
+  //     setFormData({
+  //       blogHeading: '',
+  //       blogImage: null,
+  //       data: '',
+  //       metaTitle: '',
+  //       metaDescription: '',
+  //       url: '',
+  //       metaTags: [],
+  //       domainId: null,
+  //     });
+  //     setTags([]);
+  //     setSelectedImage(null);
+  //   }
+  // }, []);
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     const siteURl = transformString(formDatas.url);
@@ -156,6 +223,7 @@ export default function NewProduct() {
     formData.append('metaTitle', formDatas.metaTitle);
     formData.append('metaDescription', formDatas.metaDescription);
     formData.append('url', siteURl);
+    formData.append('domainId', formDatas.domainId);
     if (isNamesArrayValid) {
       formData.append('metaTags', JSON.stringify(tags));
     } else {
@@ -165,15 +233,13 @@ export default function NewProduct() {
     if (selectedImage) {
       formData.append('blogImage', selectedImage);
     }
-    console.log(tags, 'tags');
     console.log(formDatas, 'formDatas');
-    if (params.id) {
-      dispatch(updateBlog(params.id, formData, navigate, alert)).then(() => {
+    if (id) {
+      dispatch(updateBlog(id, formData, navigate, alert)).then(() => {
         navigate('/admin/main/blog/all-blogs');
       });
     } else {
       dispatch(addBlog(formData, navigate, alert));
-      // console.log('New');
     }
   };
 
@@ -185,79 +251,9 @@ export default function NewProduct() {
     setTags(allTags.length > 0 ? arr : []);
   };
 
-  // EDIT BLOG CODING
-
-  const { blog } = useSelector((state) => state.blogReducer);
-
   useEffect(() => {
-    if (params.id) {
-      dispatch(getBlogById(params.id));
-    } else {
-      setSelectedImage(null);
-      setFormData({
-        blogHeading: '',
-        blogImage: null,
-        data: '',
-        metaTitle: '',
-        metaDescription: '',
-        url: '',
-        metaTags: [],
-      });
-      setTags([]);
-    }
-  }, [params]);
-
-  useEffect(() => {
-    if (blog) {
-      if (Object.keys(blog).length > 0) {
-        setFormData({
-          blogHeading: blog.blogHeading,
-          blogImage: blog.blogImage,
-          data: blog.data,
-          metaTitle: blog.metaTitle,
-          metaDescription: blog.metaDescription,
-          url: blog.url,
-          metaTags: blog.metaTags,
-        });
-        if (blog.metaTags.length > 0) {
-          let obj;
-          let arr = [];
-          blog.metaTags.forEach((element, index) => {
-            obj = {
-              name: element,
-              id: index + 1,
-            };
-            arr.push(obj);
-          });
-          setTags(arr);
-        }
-      } else {
-        setSelectedImage(null);
-        setFormData({
-          blogHeading: '',
-          blogImage: null,
-          data: '',
-          metaTitle: '',
-          metaDescription: '',
-          url: '',
-          metaTags: [],
-        });
-        setTags([]);
-      }
-    } else {
-      setSelectedImage(null);
-      setFormData({
-        blogHeading: '',
-        blogImage: null,
-        data: '',
-        metaTitle: '',
-        metaDescription: '',
-        url: '',
-        metaTags: [],
-      });
-      setTags([]);
-    }
-  }, [blog]);
+    dispatch(getAllDomains());
+  }, []);
 
   return (
     <Flex
@@ -480,7 +476,6 @@ export default function NewProduct() {
             </Flex>
           </Tab>
         </TabList>
-
         <form onSubmit={handleSubmit}>
           <TabPanels mt="24px" maxW={{ md: '90%', lg: '100%' }} mx="auto">
             <TabPanel
@@ -509,7 +504,11 @@ export default function NewProduct() {
                     fontWeight="500"
                     size="lg"
                     name="blogHeading"
-                    value={formDatas.blogHeading}
+                    value={
+                      blog?.blogHeading !== ''
+                        ? blog?.blogHeading
+                        : formDatas?.blogHeading
+                    }
                     onChange={onChange}
                   />
                   <Flex justify="space-between" mt="24px">
@@ -517,15 +516,24 @@ export default function NewProduct() {
                       variant="darkBrand"
                       fontSize="sm"
                       borderRadius="16px"
-                      disabled={formDatas.blogHeading !== '' ? false : true}
+                      disabled={
+                        blog?.blogHeading !== '' ||
+                        formDatas?.blogHeading !== ''
+                          ? false
+                          : true
+                      }
                       cursor={
-                        formDatas.blogHeading !== '' ? 'pointer' : 'not-allowed'
+                        blog?.blogHeading !== '' ||
+                        formDatas?.blogHeading !== ''
+                          ? 'pointer'
+                          : 'not-allowed'
                       }
                       w={{ base: '128px', md: '148px' }}
                       h="46px"
                       ms="auto"
                       onClick={() =>
-                        formDatas.blogHeading !== ''
+                        blog?.blogHeading !== '' ||
+                        formDatas?.blogHeading !== ''
                           ? mediaTab.current.click()
                           : null
                       }
@@ -550,10 +558,9 @@ export default function NewProduct() {
                 >
                   Media
                 </Text>
-                {console.log(blog)}
                 <Dropzone
                   handleImage={handleImage}
-                  editImage={params.id ? blog?.blogImage : ''}
+                  editImage={id ? blog?.blogImage : ''}
                   content={
                     <Box>
                       <Icon
@@ -615,12 +622,18 @@ export default function NewProduct() {
                     w={{ base: '128px', md: '148px' }}
                     h="46px"
                     onClick={() =>
-                      selectedImage || blog.blogImage !== ''
+                      selectedImage || blog?.blogImage !== ''
                         ? pricingTab.current.click()
                         : null
                     }
-                    disabled={selectedImage ? false : true}
-                    cursor={selectedImage ? 'pointer' : 'not-allowed'}
+                    disabled={
+                      blog?.blogImage !== '' || selectedImage ? false : true
+                    }
+                    cursor={
+                      blog?.blogImage !== '' || selectedImage
+                        ? 'pointer'
+                        : 'not-allowed'
+                    }
                   >
                     Next
                   </Button>
@@ -686,7 +699,7 @@ export default function NewProduct() {
                 </Stack> */}
                   <CKEditor
                     editor={ClassicEditor}
-                    data={formDatas.data}
+                    data={blog?.data !== '' ? blog?.data : formDatas?.data}
                     config={{
                       extraPlugins: [uploadPlugin],
                       toolbar: [
@@ -780,10 +793,20 @@ export default function NewProduct() {
                       borderRadius="16px"
                       w={{ base: '128px', md: '148px' }}
                       h="46px"
-                      disabled={formDatas.data !== '' ? false : true}
-                      cursor={formDatas.data !== '' ? 'pointer' : 'not-allowed'}
+                      disabled={
+                        blog?.blogImage !== '' || formDatas?.data !== ''
+                          ? false
+                          : true
+                      }
+                      cursor={
+                        blog?.blogImage !== '' || formDatas?.data !== ''
+                          ? 'pointer'
+                          : 'not-allowed'
+                      }
                       onClick={() =>
-                        formDatas.data ? othersTab.current.click() : null
+                        blog?.blogImage !== '' || formDatas?.data
+                          ? othersTab.current.click()
+                          : null
                       }
                     >
                       Next
@@ -810,9 +833,45 @@ export default function NewProduct() {
                 <Flex direction="column" w="100%">
                   <Stack direction="column" spacing="20px">
                     <SimpleGrid
-                      columns={{ base: 1, md: 2 }}
-                      gap={{ base: '0px', md: '20px' }}
+                      columns={{ base: 1, md: 3 }}
+                      gap={{ base: '0px', md: '10px' }}
                     >
+                      <Flex direction="column" mb={'30px'}>
+                        <FormLabel
+                          display="flex"
+                          ms="10px"
+                          htmlFor={'domainId'}
+                          fontSize="sm"
+                          color={textColorPrimary}
+                          fontWeight="bold"
+                          _hover={{ cursor: 'pointer' }}
+                        >
+                          Select Domain
+                        </FormLabel>
+                        <Select
+                          fontSize="sm"
+                          id="currency"
+                          variant="auth"
+                          h="44px"
+                          maxH="44px"
+                          ms={{ base: '0px', md: '0px' }}
+                          mb="24px"
+                          fontWeight="500"
+                          size="lg"
+                          name="domainId"
+                          defaultValue={
+                            blog?.domainId?.domain || formDatas?.domainId
+                          }
+                          onChange={onChange}
+                        >
+                          <option hidden selected>
+                            Select Domain
+                          </option>
+                          {domains.map((domain, index) => (
+                            <option value={domain._id}>{domain.domain}</option>
+                          ))}
+                        </Select>
+                      </Flex>
                       <InputField
                         id=""
                         label="Meta Title"
@@ -820,13 +879,17 @@ export default function NewProduct() {
                         variant="auth"
                         fontSize="sm"
                         ms={{ base: '0px', md: '0px' }}
-                        type="text"
-                        placeholder="Add Meta Title"
                         mb="24px"
                         fontWeight="500"
                         size="lg"
+                        type="text"
+                        placeholder="Add Meta Title"
                         name="metaTitle"
-                        value={formDatas.metaTitle}
+                        value={
+                          blog?.metaTitle !== ''
+                            ? blog?.metaTitle
+                            : formDatas?.metaTitle
+                        }
                         onChange={onChange}
                       />
                       <InputField
@@ -842,7 +905,7 @@ export default function NewProduct() {
                         fontWeight="500"
                         size="lg"
                         name="url"
-                        value={formDatas.url}
+                        value={blog?.url !== '' ? blog?.url : formDatas?.url}
                         onChange={onChange}
                       />
                     </SimpleGrid>
@@ -860,10 +923,13 @@ export default function NewProduct() {
                       fontWeight="500"
                       size="lg"
                       name="metaDescription"
-                      value={formDatas.metaDescription}
+                      value={
+                        blog?.metaDescription !== ''
+                          ? blog?.metaDescription
+                          : formDatas?.metaDescription
+                      }
                       onChange={onChange}
                     />
-                    {console.log(tags, 'FISR TSGS')}
                     <TagsField
                       label="Meta Tags"
                       isRequired={true}
@@ -875,7 +941,13 @@ export default function NewProduct() {
                       fontWeight="500"
                       size="lg"
                       name="metaTags"
-                      value={tags.length > 0 ? tags : []}
+                      value={
+                        blog?.metaTags?.length > 0
+                          ? blog?.metaTags
+                          : tags?.length > 0
+                          ? tags
+                          : []
+                      }
                       getTags={handleGetTags}
                     />
                   </Stack>

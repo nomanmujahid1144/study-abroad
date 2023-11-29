@@ -15,6 +15,10 @@ const Blog = new mongoose.Schema({
         type: String,
         default: ''
     },
+    domainId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Domain'
+    },
     metaTitle: {
         type: String,
         default: ''

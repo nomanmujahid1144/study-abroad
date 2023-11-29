@@ -53,9 +53,8 @@ export default function NFT(props) {
   };
 
   const handleButtonClick = () => {
-    console.log('navigate');
     // Replace '/your-route' with the path you want to navigate to
-    navigate(`/admin/main/updateblog/${blogId}`);
+    window.location = `/admin/main/updateblog/${blogId}`;
   };
 
   return (
@@ -219,7 +218,7 @@ export default function NFT(props) {
             fontWeight="400"
             me="14px"
             dangerouslySetInnerHTML={{
-              __html: data != '' ? data.slice(0, 50) + '...' : '',
+              __html: data != '' ? data?.slice(0, 50) + '...' : '',
             }}
           ></Text>
           <Flex

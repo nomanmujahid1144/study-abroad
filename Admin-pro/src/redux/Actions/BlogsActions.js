@@ -87,6 +87,26 @@ export const getBlogs = () => {
     }
   };
 };
+export const getAllDomainBlogs = () => {
+  return async (dispatch) => {
+    dispatch(selectProgressBarState(true));
+    const res = await axiosInstance.get('/api/v1/blog/getAllDomainsWithBlogs');
+    if (res.data.success === true) {
+      dispatch(selectProgressBarState(false));
+      dispatch({
+        type: ACTION_TYPES.GET_ALL_DOMAIN_BLOGS,
+        payload: res.data.data,
+      });
+    } else {
+      dispatch(selectProgressBarState(false));
+      alert.show('No Blog Found');
+      dispatch({
+        type: ACTION_TYPES.GET_ALL_DOMAIN_BLOGS,
+        payload: [],
+      });
+    }
+  };
+};
 
 export const getAllAdminBlogs = () => {
   return async (dispatch) => {

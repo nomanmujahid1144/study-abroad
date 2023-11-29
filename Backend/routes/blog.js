@@ -3,7 +3,9 @@ const router = express.Router();
 const {
     AddBlog,
     GetBlog,
-    GetSingleAdminBlogs,
+    GetAllBlogsWithDomains,
+    GetDomainBlogs,
+    // GetSingleAdminBlogs,
     GetBlogById,
     GetBlogByURL,
     AddBlogImage,
@@ -14,8 +16,10 @@ const checkAuth = require("../middleware/check-auth");
 
 router.post('/addblog',checkAuth,  AddBlog)
 router.get('/getblogs', GetBlog)
-router.get('/getalladminblogs',checkAuth, GetSingleAdminBlogs)
-router.get('/getblogbyid', GetBlogById)
+router.get('/getAllDomainsWithBlogs', GetAllBlogsWithDomains)
+router.get('/get-domain-blogs', GetDomainBlogs)
+// router.get('/getalladminblogs',checkAuth, GetSingleAdminBlogs)
+router.get('/getblogbyid', GetBlogById);
 router.get('/getblogbyurl', GetBlogByURL)
 router.post('/addblogimg', AddBlogImage)
 router.delete('/deleteblog', deleteBlog)
