@@ -1,12 +1,13 @@
 import React from "react";
 import "./cards.css";
-import imageOne from '../../images/abouttwo.png';
-import imageTwo from '../../images/aboutthree.png';
-import imageThree from '../../images/aboutfour.png';
 import "react-multi-carousel/lib/styles.css";
 import { AboutUsSlickSlider} from "../slider/SlickSlider";
 import { WhyAboutUsCard } from "./WhyAboutUsCard";
 // const handleDragStart = (e) => e.preventDefault();
+// Images
+import imageOne from '../../images/abouttwo.webp';
+import imageTwo from '../../images/aboutthree.webp';
+import imageThree from '../../images/aboutfour.webp';
 const items = [
   {
     heading: 'Mentorship from Abroad',

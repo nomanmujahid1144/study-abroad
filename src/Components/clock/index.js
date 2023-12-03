@@ -1,20 +1,23 @@
 import React, { useState } from "react";
 import "./style.css";
-import Men from "../../images/men.png";
-import Book from "../../images/Icon map-book-store.png";
-import Grad from "../../images/Icon awesome-graduation-cap.png";
-import Built from "../../images/Icon awesome-building.png";
-import Calcu from "../../images/Icon ionic-ios-calculator.png";
-import Feather from "../../images/Icon feather-box.png";
-import Passport from "../../images/Icon awesome-passport.png";
-import Mail from "../../images/Icon zocial-email.png";
-import Air from "../../images/Icon metro-airplane.png";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Modal } from "antd";
 import VisaExpertModal from "../visaModel";
 import LoanModal from "../loanModal";
 import { Box } from "./Box";
+
+// Images
+import Men from "../../images/men.webp";
+import Book from "../../images/Icon map-book-store.webp";
+import Grad from "../../images/Icon awesome-graduation-cap.webp";
+import Built from "../../images/Icon awesome-building.webp";
+import Calcu from "../../images/Icon ionic-ios-calculator.webp";
+import Feather from "../../images/Icon feather-box.webp";
+import Passport from "../../images/Icon awesome-passport.webp";
+import Mail from "../../images/Icon zocial-email.webp";
+import Air from "../../images/Icon metro-airplane.webp";
+
 function Clock() {
   const [isVisaModalOpen, setIsVisaModalOpen] = useState(false);
   const [isLoanModalOpen, setIsLoanModalOpen] = useState(false);

@@ -6,12 +6,13 @@ import { selectProgressBarState } from './ProgressBarActions';
 export const getBlogs = () => {
     return async (dispatch) => {
         dispatch(selectProgressBarState(true))
-        const res = await axiosInstance.get('/api/v1/blog/getblogs')
+        const res = await axiosInstance.get('/api/v1/blog/get-domain-blogs-with-domain-name?domain=thestudenthelpline.co.in')
+       
         if (res.data.success === true) {
             dispatch(selectProgressBarState(false))
             dispatch({
                 type: ACTION_TYPES.GET_BLOGS,
-                payload: res.data.data
+                payload: res.data.data.blogs
             })
         }
         else {

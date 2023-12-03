@@ -1,8 +1,9 @@
 import React from "react";
 import "./style.css";
-import Cale from "../../images/img.png";
-import Arrow from "../../images/span.jss107.png";
 import { Link } from "react-router-dom";
+// Images
+import Cale from "../../images/img.webp";
+import Arrow from "../../images/span.jss107.webp";
 function Coursefinder() {
   return (
     <div className="bg-whole">

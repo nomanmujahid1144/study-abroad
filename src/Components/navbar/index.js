@@ -3,9 +3,10 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Dropdown from 'react-bootstrap/Dropdown'
 import Navbar from "react-bootstrap/Navbar";
-import logo from '../../images/studentlogo.png'
-import defaultImage from '../../images/avatar.png';
-import Country from "../../images/image 18 (1).png";
+// Images
+import logo from '../../images/studentlogo.webp'
+import defaultImage from '../../images/avatar.webp';
+import Country from "../../images/image 18 (1).webp";
 import {
   Button,
   Modal,

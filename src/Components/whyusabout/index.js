@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-import { Button, Col, Row } from "antd";
+import { Col, Row } from "antd";
 
 function WhyUsAbout() {
   return (

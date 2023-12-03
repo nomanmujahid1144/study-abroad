@@ -1,15 +1,17 @@
 import React from "react";
 import "./style.css";
 import "react-multi-carousel/lib/styles.css";
-import MentorLogo from "../../images/Vector (11).png";
-import MentorImage from "../../images/img (13).png";
-import MentorLogo1 from "../../images/Vector (12).png";
-import MentorLogo2 from "../../images/Group (8).png";
-import MentorLogo3 from "../../images/Vector (14).png";
 import { Container } from "react-bootstrap";
 import { SlickMentorxSlider} from "../slider/SlickSlider";
 import { MentorXCard } from "./MentorXCard";
 import { generateLightColor } from "../../constants/helperFunction";
+
+// Images
+import MentorLogo from "../../images/Vector (11).webp";
+import MentorImage from "../../images/img (13).webp";
+import MentorLogo1 from "../../images/Vector (12).webp";
+import MentorLogo2 from "../../images/Group (8).webp";
+import MentorLogo3 from "../../images/Vector (14).webp";
 
 function MentorX() {
 

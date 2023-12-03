@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import "./style.css";
 import { Col, Row, Modal } from "antd";
-import Mic from "../../images/Get real guidance.png";
-import Mic1 from "../../images/div_chakra-stack.png";
-import Arrow from "../../images/span.jss107.png";
-import ExpertModal from "../modal";
+import ExpertModal from "../modal/visaRequirement";
+
+// images
+import Mic from "../../images/Get real guidance.webp";
+import Mic1 from "../../images/div_chakra-stack.webp";
+import Arrow from "../../images/span.jss107.webp";
 
 function RealGuidance() {
   const [isModalOpen, setIsModalOpen] = useState(false);

@@ -1,5 +1,6 @@
 const ErrorResponse = require('../utils/errorResponse');
 const Blog = require('../models/Blog');
+const Domain = require('../models/Domains');
 const mongoose = require('mongoose');
 const { uploadImage } = require('../helpers/helpers');
 
@@ -138,7 +139,7 @@ exports.GetAllBlogsWithDomains = async (req, res, next) => {
   }
   
 };
-exports.GetDomainBlogs = async (req, res, next) => {
+exports.GetDomainBlogsWithDomainId = async (req, res, next) => {
   try {
 
     const singleblog = await Blog.find({domainId : mongoose.Types.ObjectId(req.query.domainId)}, {_id: 0, userId: 0, lastUpdated: 0, domainId: 0, __v : 0})
@@ -166,7 +167,63 @@ exports.GetDomainBlogs = async (req, res, next) => {
       return res.status(200).json({
         success: true,
         message: "There is no Blog yet on this domain",
-        data: [],
+        data: {
+          blogs: []
+        },
+      });
+    }
+  } catch (err) {
+    return next(new ErrorResponse(err, 400));
+  }
+};
+exports.GetDomainBlogsWithDomainName = async (req, res, next) => {
+  try {
+
+
+    const domain = req.query.domain;
+
+    // Step 1: Retrieve domainId from Domain model based on the provided domain
+    const domainInfo = await Domain.findOne({ domain: domain });
+
+    if (!domainInfo) {
+      return res.status(404).json({
+        success: false,
+        message: "Domain not found",
+        data: null,
+      });
+    }
+
+    const domainId = domainInfo._id;
+
+
+    const singleblog = await Blog.find({domainId : mongoose.Types.ObjectId(domainId)}, {_id: 0, userId: 0, lastUpdated: 0, domainId: 0, __v : 0})
+
+    console.log(singleblog)
+
+    if (!singleblog) {
+      // return next(new ErrorResponse("Blogs Getting Failed", 400));
+      return res.status(404).json({
+        success: false,
+        message: "Blog not found",
+        data: null,
+      });
+    }
+    if (singleblog.length > 0) {
+      return res.status(200).json({
+        success: true,
+        message: "Successfully Get Blog",
+        data: {
+          Note: `Please add this ${process.env.LIVE_SERVER_URL} baseURL before blogImage so that you can get the exect image.`,
+          blogs: singleblog
+        },
+      });
+    } else {
+      return res.status(200).json({
+        success: true,
+        message: "There is no Blog yet on this domain",
+        data: {
+          blogs: []
+        },
       });
     }
   } catch (err) {

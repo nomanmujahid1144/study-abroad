@@ -1,8 +1,8 @@
 import React from "react";
 import "./style.css";
 import { Col, Row, message} from "antd";
-import Idea from "../../images/image 22 (1).png";
-import Arrow from "../../images/span.jss107.png";
+import Idea from "../../images/image 22 (1).webp";
+import Arrow from "../../images/span.jss107.webp";
 import PhoneInput from "react-phone-number-input";
 import { useState } from "react";
 import { FinderCard } from "../finderCard/finderCardBG";

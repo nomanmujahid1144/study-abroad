@@ -10,11 +10,11 @@ import { useDispatch } from "react-redux";
 import { getBlogById, getBlogs } from "../../redux/Actions/BlogsActions";
 import { useSelector } from "react-redux";
 import { baseURL } from "../../constants/baseURL";
-import aviator from '../../images/avatar.png'
-import facebook from '../../images/face.png'
-import linkedIn from '../../images/link.png'
-import twitter from '../../images/twi.png'
-import arrow from '../../images/span.jss107.png'
+import aviator from '../../images/avatar.webp'
+import facebook from '../../images/face.webp'
+import linkedIn from '../../images/link.webp'
+import twitter from '../../images/twi.webp'
+import arrow from '../../images/span.jss107.webp'
 import { CardBody } from "../../Components/card/CardBody";
 import { formatDateToCustomString } from "../../constants/helperFunction";
 import { Helmet } from 'react-helmet';

@@ -1,22 +1,24 @@
 import React, { useState, useEffect } from "react";
 // import "./style.css";
-import Global from "../../images/Huge Global.png";
-import Line from "../../images/Vector 637.png";
-import Air from "../../images/Vector (17).png";
-import divLine from "../../images/div.png";
-import Country from "../../images/SVG (3).png";
-import Country1 from "../../images/SVG (4).png";
-import Country2 from "../../images/SVG (5).png";
-import Country3 from "../../images/SVG (7).png";
-import Country4 from "../../images/SVG (8).png";
-import Country5 from "../../images/SVG (9).png";
-import Country6 from "../../images/SVG (10).png";
-import Country7 from "../../images/SVG (11).png";
-import Arrow from "../../images/span.jss107.png";
 import { Link } from "react-router-dom";
 import { FinderCard } from "../finderCard/finderCardBG";
 import { PreviousFinder } from "../finderCard/FinderPrevious";
 import { SeperateNavigation } from "../seperate-nav/SeperateNavigation";
+
+// Images
+import Global from "../../images/Huge Global.webp";
+import Line from "../../images/Vector 637.webp";
+import Air from "../../images/Vector (17).webp";
+import divLine from "../../images/div.webp";
+import Country from "../../images/SVG (3).webp";
+import Country1 from "../../images/SVG (4).webp";
+import Country2 from "../../images/SVG (5).webp";
+import Country3 from "../../images/SVG (7).webp";
+import Country4 from "../../images/SVG (8).webp";
+import Country5 from "../../images/SVG (9).webp";
+import Country6 from "../../images/SVG (10).webp";
+import Country7 from "../../images/SVG (11).webp";
+import Arrow from "../../images/span.jss107.webp";
 const data = [
   {
     id: 1,

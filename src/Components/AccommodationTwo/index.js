@@ -1,11 +1,6 @@
 import { Col,Row, message } from "antd";
 import React, { useEffect, useState } from "react";
 import "./style.css";
-import Hand from "../../images/Untitled design (21) 1.png";
-import Ring from "../../images/Group 1000004381.png";
-import Country6 from "../../images/SVG (14).png";
-import Country7 from "../../images/SVG (15).png";
-import Arrow from "../../images/span.jss107.png";
 import { useNavigate } from "react-router-dom";
 import { SeperateNavigation } from "../seperate-nav/SeperateNavigation";
 import { BackgroundGradiant } from "../login/BackgroundGradient";
@@ -13,6 +8,13 @@ import { PreviousFinder } from "../finderCard/FinderPrevious";
 import { FinderCard } from "../finderCard/finderCardBG";
 import { useDispatch } from "react-redux";
 import { addAccomodation } from "../../redux/Actions/AccomodationAction";
+
+// Images
+import Hand from "../../images/Untitled design (21) 1.webp";
+import Ring from "../../images/Group 1000004381.webp";
+import Country6 from "../../images/SVG (14).webp";
+import Country7 from "../../images/SVG (15).webp";
+import Arrow from "../../images/span.jss107.webp";
 
 const data = [
   {

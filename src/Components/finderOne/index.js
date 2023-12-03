@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from "react";
 // import "./style.css";
-import Global from "../../images/Huge Global.png";
-import Line from "../../images/Vector 637.png";
-import Air from "../../images/Vector (17).png";
-import divLine from "../../images/div.png";
-import Country6 from "../../images/SVG.png";
-import Arrow1 from "../../images/span.jss107.png";
 
 import { Link } from "react-router-dom";
 import { FinderCard } from "../finderCard/finderCardBG";
 import { PreviousFinder } from "../finderCard/FinderPrevious";
 import { SeperateNavigation } from "../seperate-nav/SeperateNavigation";
+// Images
+import Global from "../../images/Huge Global.webp";
+import Line from "../../images/Vector 637.webp";
+import Air from "../../images/Vector (17).webp";
+import divLine from "../../images/div.webp";
+import Country6 from "../../images/SVG.webp";
+import Arrow1 from "../../images/span.jss107.webp";
 
 const data = [
   {

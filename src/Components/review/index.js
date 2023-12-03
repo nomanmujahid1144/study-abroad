@@ -1,12 +1,14 @@
 import React from "react";
 import "./style.css";
 import { Col, Row} from "antd";
-import Google from "../../images/flat-color-icons_google.png";
-import Facebook from "../../images/devicon_facebook.png";
-import Arrow from "../../images/span.jss107.png";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Rating } from "react-simple-star-rating";
+
+// Images
+import Google from "../../images/flat-color-icons_google.webp";
+import Facebook from "../../images/devicon_facebook.webp";
+import Arrow from "../../images/span.jss107.webp";
 function Review() {
   return (
     <div className="div-whole-reving">

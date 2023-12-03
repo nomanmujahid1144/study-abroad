@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, Row} from "antd";
-import ErrorImage from "../../images/Ilustration.png";
-import Arrow from "../../images/Icon.png";
+import ErrorImage from "../../images/Ilustration.webp";
+import Arrow from "../../images/Icon.webp";
 import "./style.css";
 import { Link } from "react-router-dom";
 import { BackgroundGradiant } from "../../Components/login/BackgroundGradient";

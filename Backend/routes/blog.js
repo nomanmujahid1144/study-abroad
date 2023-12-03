@@ -4,7 +4,8 @@ const {
     AddBlog,
     GetBlog,
     GetAllBlogsWithDomains,
-    GetDomainBlogs,
+    GetDomainBlogsWithDomainId,
+    GetDomainBlogsWithDomainName,
     // GetSingleAdminBlogs,
     GetBlogById,
     GetBlogByURL,
@@ -17,7 +18,8 @@ const checkAuth = require("../middleware/check-auth");
 router.post('/addblog',checkAuth,  AddBlog)
 router.get('/getblogs', GetBlog)
 router.get('/getAllDomainsWithBlogs', GetAllBlogsWithDomains)
-router.get('/get-domain-blogs', GetDomainBlogs)
+router.get('/get-domain-blogs', GetDomainBlogsWithDomainId)
+router.get('/get-domain-blogs-with-domain-name', GetDomainBlogsWithDomainName)
 // router.get('/getalladminblogs',checkAuth, GetSingleAdminBlogs)
 router.get('/getblogbyid', GetBlogById);
 router.get('/getblogbyurl', GetBlogByURL)

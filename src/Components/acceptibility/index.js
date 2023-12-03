@@ -3,7 +3,7 @@ import "./style.css";
 import { Avatar, Card, Modal} from "antd";
 import { Container } from "react-bootstrap";
 // import { Link } from "react-router-dom";
-import ExpertModal from "../modal";
+import ExpertModal from "../modal/ieltsExpert";
 
 function Acceptability() {
 

@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import { baseURL } from "../../constants/baseURL";
 import { CardBody } from "../card/CardBody";
 import { formatDateToCustomString } from "../../constants/helperFunction";
+import { useState } from "react";
 
 const data = [
   {
@@ -43,6 +44,7 @@ const data = [
 
 function BlogMain() {
 
+  const [featuredBlogs, setFeaturedBlogs] = useState([]);
   const dispatch = useDispatch();
 
   const { blogs } = useSelector(
@@ -53,53 +55,63 @@ function BlogMain() {
     dispatch(getBlogs());
   }, [])
 
+  useEffect(() => {
+    if (blogs.length > 0) {
+      const featuredBlogs = blogs.filter(blog => blog.featured);
+      setFeaturedBlogs(featuredBlogs)
+    }
+  }, [blogs])
+
   return (
     <div>
       <Row justify={"center"}>
-        <Col>
-          <div>
-            <div className="divimg">
+        {featuredBlogs.length > 0 && (
+          <Col>
+            <div>
+              <div className="divimg">
+                {" "}
+                <img
+                  className="imagess"
+                  alt="abc"
+                  src={baseURL +  featuredBlogs[0].blogImage}
+                />
+              </div>
+              <br /> <br />
+              <p className="firstp">{featuredBlogs[0].blogHeading}</p>
+              <p className="secondpp" dangerouslySetInnerHTML={{
+              __html: featuredBlogs[0].data !== '' ? featuredBlogs[0].data.length > 50 ?  featuredBlogs[0].data.slice(0, 50) + '...' : featuredBlogs[0].data : '',
+            }}>
+              </p>
+              <div className="twobtns">
+                {/* <button className="buttonone">PUBLISHED BY {featuredBlogs[0].}</button> */}
+                <button className="buttontwo">{formatDateToCustomString(featuredBlogs[0].createdAt)}</button>
+              </div>
+            </div>
+          </Col>
+        )}
+        {featuredBlogs.length > 1 && (
+          <Col className="secondcolumn">
+            <div className="textleft">
               {" "}
-              <img
-                className="imagess"
-                alt="abc"
-                src="https://thestudenthelpline.co.in/admin_panel/assets/images/blog/GRE_Analytical_Writing.webp"
-              />
+              <p className="featurep">FEATURED ARTICLE</p>
             </div>
-            <br /> <br />
-            <p className="firstp">GRE Analytical Writing</p>
-            <p className="secondpp">
-              Are you preparing for the GRE and feeling intimidated by the GRE
-              Analytical
-              <br /> Writing section? You're not alone! Many test-takers find
-              the prospect of <br /> writing two essays under timed conditions
-              daunting. ...
-            </p>
-            <div className="twobtns">
-              <button className="buttonone">PUBLISHED BY NIdhi</button>
-              <button className="buttontwo">29 july 2023</button>
-            </div>
-          </div>
-        </Col>
-        <Col className="secondcolumn">
-          <div className="textleft">
-            {" "}
-            <p className="featurep">FEATURED ARTICLE</p>
-          </div>
-          <div>
-            {data.map((item, index) => (
-              <Card className="cardss" size="small" key={index}>
-                <div className="cardsdata">
-                  <img className="imag" alt="abc" src={item.image} />
-                  <div className="seconddata">
-                    <p className="headi">{item.heading}</p>
-                    <p>{item.text}</p>
+            <div>
+              {featuredBlogs.slice(1).map((item, index) => (
+                <Card className="cardss" size="small" key={index}>
+                  <div className="cardsdata">
+                    <img className="imag" style={{width : '6rem', objectFit: 'contain'}} alt="abc" src={baseURL +  item.blogImage} />
+                    <div className="seconddata">
+                      <p className="headi">{item.blogHeading}</p>
+                      <p dangerouslySetInnerHTML={{
+                        __html: item.data !== '' ? item.data.length > 50 ?  item.data.slice(0, 50) + '...' : item.data : '',
+                      }}></p>
+                    </div>
                   </div>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </Col>
+                </Card>
+              ))}
+            </div>
+          </Col>
+        )}
       </Row>
       <Container>
         <p className="latestarticle">Latest Article</p>

@@ -39,6 +39,9 @@ import {
   useColorModeValue,
   useTheme,
   Input,
+  Radio,
+  Checkbox,
+  CheckboxIcon,
 } from '@chakra-ui/react';
 
 // Custom components
@@ -100,6 +103,7 @@ export default function NewProduct() {
     metaTitle: '',
     metaDescription: '',
     url: '',
+    featured: false,
     metaTags: [],
     domainId: null,
   });
@@ -144,6 +148,16 @@ export default function NewProduct() {
     setFormData({ ...formDatas, [e.target.name]: e.target.value });
   };
 
+  const onCheckedChange = (e) => {
+    const { name, type, checked, value } = e.target;
+
+    // If the input is a checkbox, update the 'checked' property
+    // Otherwise, update the 'value' property
+    const updatedValue = type === 'checkbox' ? checked : value;
+
+    setFormData({ ...formDatas, [name]: updatedValue });
+  };
+
   const handleImage = (image) => {
     setSelectedImage(image);
   };
@@ -164,6 +178,7 @@ export default function NewProduct() {
         metaTitle: '',
         metaDescription: '',
         url: '',
+        featured: false,
         metaTags: [],
         domainId: null,
       });
@@ -172,44 +187,46 @@ export default function NewProduct() {
     }
   }, [id]);
 
-  // useEffect(() => {
-  //   if (blog) {
-  //     if (Object.keys(blog).length > 0) {
-  //       setFormData((prevData) => ({
-  //         ...prevData,
-  //         blogHeading: blog?.blogHeading || '',
-  //         blogImage: blog?.blogImage || null,
-  //         data: blog?.data || '',
-  //         metaTitle: blog?.metaTitle || '',
-  //         metaDescription: blog?.metaDescription || '',
-  //         url: blog?.url || '',
-  //         metaTags: blog?.metaTags || [],
-  //         domainId: blog?.domainId || null,
-  //       }));
+  useEffect(() => {
+    if (blog) {
+      if (Object.keys(blog).length > 0) {
+        setFormData((prevData) => ({
+          ...prevData,
+          blogHeading: blog?.blogHeading || '',
+          blogImage: blog?.blogImage || null,
+          data: blog?.data || '',
+          metaTitle: blog?.metaTitle || '',
+          metaDescription: blog?.metaDescription || '',
+          url: blog?.url || '',
+          featured: blog?.featured || false,
+          metaTags: blog?.metaTags || [],
+          domainId: blog?.domainId || null,
+        }));
 
-  //       if (blog?.metaTags && blog.metaTags.length > 0) {
-  //         let arr = blog.metaTags.map((element, index) => ({
-  //           name: element,
-  //           id: index + 1,
-  //         }));
-  //         setTags(arr);
-  //       }
-  //     }
-  //   } else {
-  //     setFormData({
-  //       blogHeading: '',
-  //       blogImage: null,
-  //       data: '',
-  //       metaTitle: '',
-  //       metaDescription: '',
-  //       url: '',
-  //       metaTags: [],
-  //       domainId: null,
-  //     });
-  //     setTags([]);
-  //     setSelectedImage(null);
-  //   }
-  // }, []);
+        if (blog?.metaTags && blog.metaTags.length > 0) {
+          let arr = blog.metaTags.map((element, index) => ({
+            name: element,
+            id: index + 1,
+          }));
+          setTags(arr);
+        }
+      }
+    } else {
+      setFormData({
+        blogHeading: '',
+        blogImage: null,
+        data: '',
+        metaTitle: '',
+        metaDescription: '',
+        url: '',
+        featured: false,
+        metaTags: [],
+        domainId: null,
+      });
+      setTags([]);
+      setSelectedImage(null);
+    }
+  }, [blog]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -224,16 +241,15 @@ export default function NewProduct() {
     formData.append('metaDescription', formDatas.metaDescription);
     formData.append('url', siteURl);
     formData.append('domainId', formDatas.domainId);
+    formData.append('featured', formDatas.featured);
     if (isNamesArrayValid) {
       formData.append('metaTags', JSON.stringify(tags));
     } else {
       formData.append('metaTags', JSON.stringify(blog.metaTags));
     }
-    console.log(selectedImage, 'selectedImage');
     if (selectedImage) {
       formData.append('blogImage', selectedImage);
     }
-    console.log(formDatas, 'formDatas');
     if (id) {
       dispatch(updateBlog(id, formData, navigate, alert)).then(() => {
         navigate('/admin/main/blog/all-blogs');
@@ -504,11 +520,7 @@ export default function NewProduct() {
                     fontWeight="500"
                     size="lg"
                     name="blogHeading"
-                    value={
-                      blog?.blogHeading !== ''
-                        ? blog?.blogHeading
-                        : formDatas?.blogHeading
-                    }
+                    value={formDatas?.blogHeading}
                     onChange={onChange}
                   />
                   <Flex justify="space-between" mt="24px">
@@ -516,14 +528,8 @@ export default function NewProduct() {
                       variant="darkBrand"
                       fontSize="sm"
                       borderRadius="16px"
-                      disabled={
-                        blog?.blogHeading !== '' ||
-                        formDatas?.blogHeading !== ''
-                          ? false
-                          : true
-                      }
+                      disabled={formDatas?.blogHeading !== '' ? false : true}
                       cursor={
-                        blog?.blogHeading !== '' ||
                         formDatas?.blogHeading !== ''
                           ? 'pointer'
                           : 'not-allowed'
@@ -532,7 +538,6 @@ export default function NewProduct() {
                       h="46px"
                       ms="auto"
                       onClick={() =>
-                        blog?.blogHeading !== '' ||
                         formDatas?.blogHeading !== ''
                           ? mediaTab.current.click()
                           : null
@@ -622,18 +627,10 @@ export default function NewProduct() {
                     w={{ base: '128px', md: '148px' }}
                     h="46px"
                     onClick={() =>
-                      selectedImage || blog?.blogImage !== ''
-                        ? pricingTab.current.click()
-                        : null
+                      selectedImage ? pricingTab.current.click() : null
                     }
-                    disabled={
-                      blog?.blogImage !== '' || selectedImage ? false : true
-                    }
-                    cursor={
-                      blog?.blogImage !== '' || selectedImage
-                        ? 'pointer'
-                        : 'not-allowed'
-                    }
+                    disabled={selectedImage ? false : true}
+                    cursor={selectedImage ? 'pointer' : 'not-allowed'}
                   >
                     Next
                   </Button>
@@ -699,7 +696,7 @@ export default function NewProduct() {
                 </Stack> */}
                   <CKEditor
                     editor={ClassicEditor}
-                    data={blog?.data !== '' ? blog?.data : formDatas?.data}
+                    data={formDatas?.data}
                     config={{
                       extraPlugins: [uploadPlugin],
                       toolbar: [
@@ -793,20 +790,12 @@ export default function NewProduct() {
                       borderRadius="16px"
                       w={{ base: '128px', md: '148px' }}
                       h="46px"
-                      disabled={
-                        blog?.blogImage !== '' || formDatas?.data !== ''
-                          ? false
-                          : true
-                      }
+                      disabled={formDatas?.data !== '' ? false : true}
                       cursor={
-                        blog?.blogImage !== '' || formDatas?.data !== ''
-                          ? 'pointer'
-                          : 'not-allowed'
+                        formDatas?.data !== '' ? 'pointer' : 'not-allowed'
                       }
                       onClick={() =>
-                        blog?.blogImage !== '' || formDatas?.data
-                          ? othersTab.current.click()
-                          : null
+                        formDatas?.data ? othersTab.current.click() : null
                       }
                     >
                       Next
@@ -859,9 +848,7 @@ export default function NewProduct() {
                           fontWeight="500"
                           size="lg"
                           name="domainId"
-                          defaultValue={
-                            blog?.domainId?.domain || formDatas?.domainId
-                          }
+                          defaultValue={formDatas?.domainId}
                           onChange={onChange}
                         >
                           <option hidden selected>
@@ -885,11 +872,7 @@ export default function NewProduct() {
                         type="text"
                         placeholder="Add Meta Title"
                         name="metaTitle"
-                        value={
-                          blog?.metaTitle !== ''
-                            ? blog?.metaTitle
-                            : formDatas?.metaTitle
-                        }
+                        value={formDatas?.metaTitle}
                         onChange={onChange}
                       />
                       <InputField
@@ -905,11 +888,27 @@ export default function NewProduct() {
                         fontWeight="500"
                         size="lg"
                         name="url"
-                        value={blog?.url !== '' ? blog?.url : formDatas?.url}
+                        value={formDatas?.url}
                         onChange={onChange}
                       />
                     </SimpleGrid>
-
+                    <Stack spacing={5} direction="row">
+                      <Checkbox
+                        // onChange={onChange}
+                        onChange={onCheckedChange}
+                        // values={
+                        //   blog?.featured !== false
+                        //     ? blog?.featured
+                        //     : formDatas?.featured
+                        // }
+                        checked={formDatas?.featured}
+                        size="lg"
+                        name="featured"
+                        colorScheme={'blue'}
+                      >
+                        Featured Blog
+                      </Checkbox>
+                    </Stack>
                     <TextField
                       id=""
                       label="Meta Description"
@@ -923,11 +922,7 @@ export default function NewProduct() {
                       fontWeight="500"
                       size="lg"
                       name="metaDescription"
-                      value={
-                        blog?.metaDescription !== ''
-                          ? blog?.metaDescription
-                          : formDatas?.metaDescription
-                      }
+                      value={formDatas?.metaDescription}
                       onChange={onChange}
                     />
                     <TagsField
@@ -941,13 +936,7 @@ export default function NewProduct() {
                       fontWeight="500"
                       size="lg"
                       name="metaTags"
-                      value={
-                        blog?.metaTags?.length > 0
-                          ? blog?.metaTags
-                          : tags?.length > 0
-                          ? tags
-                          : []
-                      }
+                      value={tags?.length > 0 ? tags : []}
                       getTags={handleGetTags}
                     />
                   </Stack>

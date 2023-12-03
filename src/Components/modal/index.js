@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import "./style.css";
 import { Col, Row, Select, message } from "antd";
-import Idea from "../../images/image 21.png";
-import Country from "../../images/image 18 (1).png";
-import Arrow from "../../images/span.jss107.png";
-import { Link } from "react-router-dom";
+import Idea from "../../images/image 21.webp";
+// import Country from "../../images/image 18 (1).png";
+import Arrow from "../../images/span.jss107.webp";
+// import { Link } from "react-router-dom";
 import { FinderCard } from "../finderCard/finderCardBG";
 import { PreviousFinder } from "../finderCard/FinderPrevious";
 import InputField from "../fields/InputField";
 import PhoneInput from "react-phone-number-input";
 import { useDispatch } from "react-redux";
 import { newFormSubmission } from "../../redux/Actions/FormSubmissionAction";
-const { Option } = Select;
+// const { Option } = Select;
 function ExpertModal({handleCloseModal}) {
 
   const dispatch = useDispatch();

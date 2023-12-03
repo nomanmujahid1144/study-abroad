@@ -1,5 +1,5 @@
 import React from "react";
-import Arrow from "../../images/div (1).png";
+import Arrow from "../../images/div (1).webp";
 import { useNavigate } from "react-router-dom";
 
 

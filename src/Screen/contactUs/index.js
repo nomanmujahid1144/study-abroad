@@ -1,9 +1,9 @@
 import React from "react";
 import { Col, Row} from "antd";
 import "./style.css";
-import SMS from "../../images/sms.png";
-import Phone from "../../images/call-calling.png";
-import Location from "../../images/location.png";
+import SMS from "../../images/sms.webp";
+import Phone from "../../images/call-calling.webp";
+import Location from "../../images/location.webp";
 import { BackgroundGradiant } from "../../Components/login/BackgroundGradient";
 import { LoginHeadings } from "../../Components/login/LoginHeading";
 import InputField from "../../Components/fields/InputField";

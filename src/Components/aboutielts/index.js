@@ -1,8 +1,22 @@
 import React from "react";
-import { Card} from "antd";
+import { Card, Modal} from "antd";
 import { Container } from "react-bootstrap";
+import ExpertModal from "../modal/ieltsExpert";
+import { useState } from "react";
 
 function AboutIelts() {
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div>
       <Container>
@@ -15,7 +29,7 @@ function AboutIelts() {
                 The International English Language Testing System (IELTS) is a standardized test used to assess the English language  proficiency of individuals who wish to study or work in  English-speaking countries.Recognized by over 10,000 organizations worldwide, IELTS is one of the most widely accepted English language proficiency tests.
               </p>
               <div className="twrs">
-                <button className="buseeall">
+                <button onClick={showModal} className="buseeall">
                   SEE ALL
                   <img
                     className="imgiel"
@@ -24,6 +38,15 @@ function AboutIelts() {
                   />
                 </button>
               </div>
+              <Modal
+                className="style-modal"
+                open={isModalOpen}
+                onOk={handleOk}
+                onCancel={handleCancel}
+                footer
+              >
+                <ExpertModal handleCloseModal={handleCancel} />
+              </Modal>
             </div>
             <div className="col-md-6">
               <img

@@ -1,16 +1,17 @@
 import React from "react";
-import "./style.css";
-import { Col, Row, Avatar} from "antd";
-import Arrow from "../../images/span.jss107.png";
-import Men from "../../images/Hero.png";
-import Dwonarrow from "../../images/Vector 6.png";
-import { Link } from "react-router-dom";
-import SmallA from "../../images/Ellipse 67.png";
-import SmallA1 from "../../images/Ellipse 68.png";
-import SmallA2 from "../../images/Ellipse 69.png";
-import SmallA3 from "../../images/Group (9).png";
 import { Rating } from "react-simple-star-rating";
 import { Container } from "react-bootstrap";
+import { Col, Row, Avatar} from "antd";
+import { Link } from "react-router-dom";
+import "./style.css";
+// Images
+import Arrow from "../../images/span.jss107.webp";
+import Men from "../../images/Hero.webp";
+import Dwonarrow from "../../images/Vector 6.webp";
+import SmallA from "../../images/Ellipse 67.webp";
+import SmallA1 from "../../images/Ellipse 68.webp";
+import SmallA2 from "../../images/Ellipse 69.webp";
+import SmallA3 from "../../images/Group (9).webp";
 
 function HeroSection() {
   return (

@@ -15,11 +15,9 @@ function Footer() {
         <div className="container">
             <div className="row">
                 <div className="col-lg-4">
-                    <h1>
-                        <a href="https://overseasstudypros.com/">
-                            <img className="footer-image" alt="no img" src={logo} />
-                        </a>
-                    </h1>
+                    <a href="https://overseasstudypros.com/">
+                        <img className="footer-image" alt="no img" src={logo} />
+                    </a>
                     <div className="social-icons-btn">
                         <a className="icons twitter" href="https://twitter.com/thestudent_help">
                             <FontAwesomeIcon icon="fa-brands fa-x-twitter" />

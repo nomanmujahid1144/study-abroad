@@ -1,21 +1,23 @@
 import React from "react";
 import "./style.css";
 import "react-multi-carousel/lib/styles.css";
-import Name1 from "../../images/img (1).png";
-import Name2 from "../../images/img (2).png";
-import Name3 from "../../images/img (3).png";
-import Name4 from "../../images/img (4).png";
-import Name5 from "../../images/img (5).png";
-import Name6 from "../../images/img (6).png";
-import Name7 from "../../images/img (7).png";
-import Name8 from "../../images/img (8).png";
-import Name9 from "../../images/img (9).png";
-import Name10 from "../../images/img (10).png";
-import Name11 from "../../images/img (11).png";
-import Name12 from "../../images/img (12).png";
 import { SlickLogoSlider} from "../slider/SlickSlider";
 import { NameCard } from "./NameCard";
-import { generateDarkColor} from "../../constants/helperFunction";
+import { generateDarkColor } from "../../constants/helperFunction";
+
+// Images
+import Name1 from "../../images/img (1).webp";
+import Name2 from "../../images/img (2).webp";
+import Name3 from "../../images/img (3).webp";
+import Name4 from "../../images/img (4).webp";
+import Name5 from "../../images/img (5).webp";
+import Name6 from "../../images/img (6).webp";
+import Name7 from "../../images/img (7).webp";
+import Name8 from "../../images/img (8).webp";
+import Name9 from "../../images/img (9).webp";
+import Name10 from "../../images/img (10).webp";
+import Name11 from "../../images/img (11).webp";
+import Name12 from "../../images/img (12).webp";
 
 const Images = [
   {

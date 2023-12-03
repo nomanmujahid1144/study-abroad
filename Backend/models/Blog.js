@@ -35,6 +35,10 @@ const Blog = new mongoose.Schema({
         type: Array,
         default: []
     },
+    featured: {
+        type: Boolean,
+        default: false
+    },
     createdAt: {
         type: Date,
         default: new Date()

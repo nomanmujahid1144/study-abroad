@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from "react";
 // import "./style.css";
-import Global from "../../images/Huge Global.png";
-import Line from "../../images/Vector 637.png";
-import Air from "../../images/Vector (18).png";
-import divLine from "../../images/div.png";
-import Country6 from "../../images/SVG (19).png";
-import Country7 from "../../images/SVG (20).png";
-import Country9 from "../../images/SVG (15).png";
-import Arrow from "../../images/span.jss107.png";
 import { InputNumber, Slider } from "antd";
 import { Link } from "react-router-dom";
 import { FinderCard } from "../finderCard/finderCardBG";
 import { PreviousFinder } from "../finderCard/FinderPrevious";
 import { SeperateNavigation } from "../seperate-nav/SeperateNavigation";
+
+// Images
+import Global from "../../images/Huge Global.webp";
+import Line from "../../images/Vector 637.webp";
+import Air from "../../images/Vector (18).webp";
+import divLine from "../../images/div.webp";
+import Country6 from "../../images/SVG (19).webp";
+import Country7 from "../../images/SVG (20).webp";
+import Country9 from "../../images/SVG (15).webp";
+import Arrow from "../../images/span.jss107.webp";
 
 const data = [
   {

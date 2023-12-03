@@ -1,15 +1,17 @@
 import { Col, Row } from "antd";
 import React, { useState } from "react";
 import "./style.css";
-import Hand from "../../images/Untitled design (21) 1.png";
-import Ring from "../../images/Group 1000004381.png";
-import Country from "../../images/Vector (19).png";
-import Arrow from "../../images/span.jss107.png";
 import { Link } from "react-router-dom";
 import { SeperateNavigation } from "../seperate-nav/SeperateNavigation";
 import { BackgroundGradiant } from "../login/BackgroundGradient";
 import { PreviousFinder } from "../finderCard/FinderPrevious";
 import { FinderCard } from "../finderCard/finderCardBG";
+
+// Images
+import Hand from "../../images/Untitled design (21) 1.webp";
+import Ring from "../../images/Group 1000004381.webp";
+import Country from "../../images/Vector (19).webp";
+import Arrow from "../../images/span.jss107.webp";
 const data = [
   {
     id: 1,
