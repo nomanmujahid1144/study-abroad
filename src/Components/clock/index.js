@@ -55,8 +55,8 @@ function Clock() {
     <div className="whole-div-bggg main-container">
       <Container>
         <div className="left-div">
-          <p className="ens-text">Ensuring you get the</p>
-          <p className="best-text">best in</p>
+          <p className="ens-text">Expand Your Wings with All in One</p>
+          <p className="best-text">Abroad Consultancy Services</p>
         </div>
       </Container>
       <div className="whole-div-bggg1">
@@ -81,14 +81,14 @@ function Clock() {
               </div>
             </Box>
             <div className="blue-box5">
-              <p className="lorem-text">Visa Experts</p>
+              <p className="lorem-text">Visa Application</p>
               <p className="lorem-text1">
                 World-Class Visa Assistance at Your
                 <br /> Fingertips
               </p>
               <div className="div-btn-lor">
                 <button className="btn-lorem" onClick={openVisaModal}>
-                  Visa Experts
+                  Visa Application
                 </button>
                 <img src={Passport} alt="no-img" className="img-book" />
               </div>
@@ -165,7 +165,7 @@ function Clock() {
                 </Modal>
               </div>
               <div className="blue-box4">
-                <p className="lorem-text">Apply Scholarship</p>
+                <p className="lorem-text">Scholarship</p>
                 <p className="lorem-text1">
                   Discover the Top Scholarships That Match
                   <br /> Your Profile

@@ -20,6 +20,7 @@ function Ielts() {
     <Acceptability />
     <VideoSection />
     <Faq />
+    
     </>
   );
 }

@@ -1,0 +1,70 @@
+.content-content {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+  .content-content .eachitem {
+    border-bottom: solid #ccd4d6 0.01rem;
+    width: 60rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+  }
+  @media screen and (max-width: 1024px) {
+    .content-content .eachitem {
+      border-bottom: solid #ccd4d6 0.01rem;
+      width: 100%;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: 0;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .content-content .eachitem {
+      border-bottom: solid #ccd4d6 0.01rem;
+      width: 100%;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: 0;
+    }
+  }
+  @media screen and (max-width: 425px) {
+    .content-content .eachitem {
+      border-bottom: solid #ccd4d6 0.01rem;
+      width: 100%;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: 0;
+    }
+  }
+  
+  /* Add animations for smooth toggle effect */
+  .content-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out; /* Adjust the duration as needed */
+  }
+  
+  /* Apply styles when the content item is active */
+  .content-item.active .content-answer {
+    max-height: 1000px; /* Adjust this value based on your content's height */
+    animation: fadeIn 0.3s ease-in-out; /* Add a fadeIn animation */
+  }
+  
+  /* Define the fadeIn animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .content-question{
+  background: linear-gradient(134deg, #FFB201 0%, #A27FFF 100%);
+  padding: 0.5rem;
+  }
+  .content-question h2{
+    font-size: 16px;
+  }
