@@ -10,6 +10,7 @@ import Block from "../../Components/block";
 import MentorX from "../../Components/mentorX";
 import Review from "../../Components/review";
 import Clock from "../../Components/clock";
+import Content from "../../Components/Content";
 function LandingPage() {
   return (
     <div>
@@ -18,6 +19,7 @@ function LandingPage() {
       </div>
       <VideoSection />
       <Clock />
+      <Content />
       <RealGuidance />
       <Coursefinder />
       <MentorX />
