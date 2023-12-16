@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
-import jwt_decode from 'jwt-decode';
+// import as jwt_decode from 'jwt-decode';
+import * as jwt_decode from 'jwt-decode';
 
 export const SignInWithGoogle = ({ getCredentials }) => {
   function handleCallBackResponse(response) {
